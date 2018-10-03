@@ -1,5 +1,5 @@
 {
-  "name": "angular-example-app",
+  "name": "x-test-3",
   "version": "6.1.0",
   "license": "MIT",
   "scripts": {
@@ -16,7 +16,7 @@
     "bundle-report": "ng build --prod --stats-json && webpack-bundle-analyzer dist/stats.json",
     "release:minor": "standard-version --release-as minor && git push --follow-tags origin master",
     "release:major": "standard-version --release-as major && git push --follow-tags origin master",
-    "docker": "docker build -t angularexampleapp . && docker run -d -p 4200:80 angularexampleapp",
+    "docker": "docker build -t xtest3 . && docker run -d -p 4200:80 xtest3",
     "update": "ng update --all --force"
   },
   "private": true,
