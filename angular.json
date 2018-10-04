@@ -67,7 +67,7 @@
               "vendorChunk": false,
               "buildOptimizer": true,
               "serviceWorker": true,
-              "baseHref": "/XTest3",
+              "baseHref": "/XTest3/",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
