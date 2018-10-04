@@ -9,7 +9,6 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {ProgressInterceptor} from './shared/interceptors/progress.interceptor';
 import {TimingInterceptor} from './shared/interceptors/timing.interceptor';
-import {NgxExampleLibraryModule} from '@ismaestro/ngx-example-library';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 import {ProgressBarService} from './core/services/progress-bar.service';
@@ -25,11 +24,6 @@ import {WebpackTranslateLoader} from './webpack-translate-loader';
       loader: {
         provide: TranslateLoader,
         useClass: WebpackTranslateLoader
-      }
-    }),
-    NgxExampleLibraryModule.forRoot({
-      config: {
-        say: 'hello'
       }
     }),
     CoreModule,
