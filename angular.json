@@ -68,6 +68,7 @@
               "buildOptimizer": true,
               "serviceWorker": true,
               "baseHref": "/XTest3/",
+			  "deployUrl": "/XTest3/"
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
