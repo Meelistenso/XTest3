@@ -23,7 +23,6 @@ branches:
 before_script:
   - set -e
   - npm install
-  - npm run build:library
   - npm install -g angular-cli-ghpages
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
