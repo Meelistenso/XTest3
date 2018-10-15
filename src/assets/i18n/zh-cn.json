@@ -1,6 +1,6 @@
 {
   "alert": "提示",
-  "angularExampleApp": "angular例子",
+  "app-name": "XTest 3",
   "areYouSure": "你确定吗?",
   "back": "返回",
   "canVote": "可以投票 :)",
