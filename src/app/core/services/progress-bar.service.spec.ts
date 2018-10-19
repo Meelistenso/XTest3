@@ -6,7 +6,6 @@ import {APP_CONFIG, AppConfig} from '../../config/app.config';
 
 describe('ProgressBarService', () => {
   let progressBarService;
-  let heroService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
