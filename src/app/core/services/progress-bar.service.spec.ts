@@ -3,7 +3,6 @@ import {ProgressBarService} from './progress-bar.service';
 import {TestsModule} from '../../shared/modules/tests.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {APP_CONFIG, AppConfig} from '../../config/app.config';
-import {HeroService} from '../../modules/heroes/shared/hero.service';
 
 describe('ProgressBarService', () => {
   let progressBarService;
@@ -17,13 +16,11 @@ describe('ProgressBarService', () => {
       ],
       providers: [
         {provide: APP_CONFIG, useValue: AppConfig},
-        ProgressBarService,
-        HeroService
+        ProgressBarService
       ]
     });
 
     progressBarService = TestBed.get(ProgressBarService);
-    heroService = TestBed.get(HeroService);
   });
 
   it('should not be requestsRunning', (() => {

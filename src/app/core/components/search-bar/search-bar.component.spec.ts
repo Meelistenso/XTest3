@@ -8,9 +8,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import {TestsModule} from '../../../shared/modules/tests.module';
 import {Error404Page} from '../../pages/error404/error404.page';
 import {HomePage} from '../../pages/home/home.page';
-import {HeroService} from '../../../modules/heroes/shared/hero.service';
 import {Router} from '@angular/router';
-import {Hero} from '../../../modules/heroes/shared/hero.model';
 
 describe('HeroSearchComponent', () => {
   let fixture;
@@ -37,8 +35,7 @@ describe('HeroSearchComponent', () => {
           }
         },
         {provide: APP_CONFIG, useValue: AppConfig},
-        {provide: APP_BASE_HREF, useValue: '/'},
-        HeroService
+        {provide: APP_BASE_HREF, useValue: '/'}
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
@@ -46,44 +43,9 @@ describe('HeroSearchComponent', () => {
     fixture = TestBed.createComponent(SearchBarComponent);
     fixture.detectChanges();
     component = fixture.debugElement.componentInstance;
-    heroService = TestBed.get(HeroService);
   }));
 
   it('should create hero search component', (() => {
     expect(component).toBeTruthy();
-  }));
-
-  it('should get all heroes', fakeAsync(() => {
-    spyOn(heroService, 'getHeroes').and.returnValue(Promise.resolve(true));
-    tick();
-    fixture.detectChanges();
-    expect(component.defaultHeroes.length).toBeGreaterThan(0);
-    for (const hero of component.defaultHeroes) {
-      expect(hero.default).toBe(true);
-    }
-  }));
-
-  it('should filter heroes array', (() => {
-    component.defaultHeroes = [
-      {
-        'id': 1,
-        'name': 'batman',
-        'default': true
-      },
-      {
-        'id': 2,
-        'name': 'spiderman',
-        'default': false
-      }
-    ];
-    expect(component.filterHeroes('batman').length).toBe(1);
-    expect(component.filterHeroes('spiderman').length).toBe(0);
-    expect(component.filterHeroes().length).toBe(2);
-  }));
-
-  it('should navigate to hero detail', (() => {
-    const router = fixture.debugElement.injector.get(Router);
-    component.searchHero(new Hero(5, 'test name', 'test alterEgo', 0));
-    expect(router.navigate).toHaveBeenCalledWith(['heroes/5']);
   }));
 });
