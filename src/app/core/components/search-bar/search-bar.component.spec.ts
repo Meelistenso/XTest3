@@ -13,7 +13,6 @@ import {Router} from '@angular/router';
 describe('HeroSearchComponent', () => {
   let fixture;
   let component;
-  let heroService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
