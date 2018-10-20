@@ -8,9 +8,23 @@ export const AppConfig: IAppConfig = {
   routes: {
     error404: '404',
 
-    teacher: 'teacher',
-    student: 'student',
-    admin: 'admin'
+    login: 'login',
+
+    teacher: {
+      teacher: 'teacher',
+    },
+    student: {
+      student: 'student',
+      labs: 'labs',
+      lab: 'lab',
+    },
+    admin: {
+      admin: 'admin',
+    },
+
+    dashboard: 'dashboard',
+    code: 'code',
+    test: 'test'
   },
   endpoints: {
   },
