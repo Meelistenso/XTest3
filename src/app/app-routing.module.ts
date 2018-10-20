@@ -16,9 +16,9 @@ const routes: Routes = [
 
   { path: AppConfig.routes.login, component: LoginComponent },
 
-  { path: AppConfig.routes.teacher, loadChildren: './modules/teacher/teacher.module#TeacherModule' },
-  { path: AppConfig.routes.student, loadChildren: './modules/student/student.module#StudentModule' },
-  { path: AppConfig.routes.admin, loadChildren: './modules/admin/admin.module#AdminModule' },
+  { path: AppConfig.routes.teacher.teacher, loadChildren: './modules/teacher/teacher.module#TeacherModule' },
+  { path: AppConfig.routes.student.student, loadChildren: './modules/student/student.module#StudentModule' },
+  { path: AppConfig.routes.admin.admin, loadChildren: './modules/admin/admin.module#AdminModule' },
 
   // otherwise redirect to 404
   { path: '**', redirectTo: '/' + AppConfig.routes.error404 }
