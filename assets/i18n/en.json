@@ -30,7 +30,6 @@
   "heroPower": "Hero power",
   "heroRemoved": "Hero has gone :(",
   "heroesList": "Heroes list",
-  "home": "Home",
   "language": "Language",
   "mayTheForce": "May the force be with you",
   "name": "Name",
@@ -50,5 +49,21 @@
   "topHeroes": "Heroes most liked",
   "updateBrowser": "You are using an old browser, please update it and reload the page.",
   "yellow": "Yellow",
-  "yes": "Yes"
+  "yes": "Yes",
+
+  "home": "Home",
+  "login": "Login",
+  "register": "Register",
+
+  "passwordNotSame": "Passwords not same",
+  "confirmPassword": "Confirm password",
+
+  "invalidPassword": "Please enter proper password",
+  "invalidEmail": "Enter proper Email!",
+  "password": "Password",
+  "email": "Email",
+  "submit": "Submit",
+
+  "firstName": "First Name",
+  "lastName": "Last Name"
 }

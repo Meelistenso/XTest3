@@ -1,0 +1,15 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[0],{
+
+/***/ "./src/assets/i18n/ru.json":
+/*!*********************************!*\
+  !*** ./src/assets/i18n/ru.json ***!
+  \*********************************/
+/*! exports provided: alert, app-name, areYouSure, back, canVote, cancel, cannotVote, create, createHero, createNewHero, cyan, details, error404, errorHasOcurred, findHero, firstTwoHeroesById, goBack, hero-create-new, hero-top, heroCreated, heroDefault, heroDetail, heroDuplicated, heroLikeMaximum, heroPower, heroRemoved, heroesList, language, mayTheForce, name, nameRequired, no, noHero, offlineMessage, orange, realName, realNameRequired, remove, removeHero, saveHero, saved, snapshot, sureRemoveHero, topHeroes, updateBrowser, yellow, yes, home, login, register, passwordNotSame, confirmPassword, invalidPassword, invalidEmail, password, email, submit, firstName, lastName, default */
+/***/ (function(module) {
+
+module.exports = {"alert":"Alerta","app-name":"XTest 3","areYouSure":"¿Estas seguro?","back":"Atras","canVote":"Puedes votar :)","cancel":"Cancelar","cannotVote":"No puedes votar más :(","create":"Crear","createHero":"Añadir un heroe","createNewHero":"Crear nuevo heroe","cyan":"Cian","details":"info","error404":"Error 404","errorHasOcurred":"Ha ocurrido un error","findHero":"Busca un heroe","firstTwoHeroesById":"Heroes (1-2)","goBack":"Volver","hero-create-new":{"newHero":"Nuevo heroe"},"hero-top":{"title":"Top Heroes"},"heroCreated":"Heroe creado!","heroDefault":"Los heroes por defecto, no se pueden borrar!","heroDetail":"Detalle del heroe","heroDuplicated":"El id del heroe ya está cogido!","heroLikeMaximum":"El límite de votos es {{value}}!","heroPower":"Poder del heroe","heroRemoved":"El heroe nos ha dejado :(","heroesList":"Lista de heroes","language":"Idioma","mayTheForce":"Que la fuerza te acompañe","name":"Nombre","nameRequired":"El nombre es obligatorio","no":"No","noHero":"No hay heroe!","offlineMessage":"Sin conexión no podemos cargar nada!","orange":"Naranja","realName":"Nombre real","realNameRequired":"Nombre real es obligatorio","remove":"Eliminar","removeHero":"Eliminar heroe","saveHero":"Guardar heroe","saved":"Guardado!","snapshot":"Captura","sureRemoveHero":"¿Estas seguro de que quieres eliminar el heroe?","topHeroes":"Heroes más votados","updateBrowser":"Estas usando un navegador antiguo, por favor actualiza la versión y recarga la página.","yellow":"Amarillo","yes":"Yes","home":"Главная","login":"Войти","register":"Зарегистрироваться","passwordNotSame":"Пароли не совпадають","confirmPassword":"Подтверждение пароля","invalidPassword":"Введите правильный пароль","invalidEmail":"Введите корректный адрес","password":"Пароль","email":"Почта","submit":"Отправить","firstName":"Имя","lastName":"Фамилия"};
+
+/***/ })
+
+}]);
+//# sourceMappingURL=0.js.map
