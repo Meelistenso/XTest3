@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -19,7 +19,8 @@
     "paths": {
       "ngx-example-library": [
         "dist/ngx-example-library"
-      ]
+      ],
+      "@app/*": ["app/*"]
     }
   },
   "angularCompilerOptions": {

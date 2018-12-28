@@ -1,0 +1,59 @@
+<!-- Card container that binds all togather -->
+<mat-card>
+  <!-- Title of an Card -->
+  <mat-card-title>
+    {{ 'login' | translate }}
+  </mat-card-title>
+
+  <!-- Actual content starts from here -->
+  <mat-card-content>
+    <form [formGroup]="authForm" class="authForm" (ngSubmit)="onFormSubmit(authForm.value)">
+      <table>
+        <tr>
+          <td colspan="2">
+            <mat-form-field>
+              <input formControlName="Email" matInput [placeholder]="'email' | translate" required>
+              <!-- <mat-hint>use like : demo@demo.com</mat-hint> -->
+              <mat-error>
+                <span *ngIf="!authForm.get('Email').valid && authForm.get('Email').touched">
+                  {{ 'invalidEmail' | translate }}
+                </span>
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <mat-form-field>
+              <input matInput formControlName="Password" [placeholder]="'password' | translate" [type]="hidePassword ? 'password' : 'text'">
+              <mat-icon matSuffix (click)="hidePassword = !hidePassword">
+                {{hidePassword ? 'visibility_off' : 'visibility'}}
+              </mat-icon>
+              <mat-error>
+                <span *ngIf="!authForm.get('Password').valid && authForm.get('Password').touched">
+                    {{'invalidPassword' | translate }}
+                </span>
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="content-center">
+            <button mat-raised-button color="accent" [disabled]="!authForm.valid || IsAccepted==0">{{'submit' | translate}}</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+              <p class="text-xs-center">
+                <br>
+                <a [routerLink]="['/register']">Need an account?</a>
+              </p>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+    </form>
+  </mat-card-content>
+</mat-card>

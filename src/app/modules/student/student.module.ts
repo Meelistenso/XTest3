@@ -7,7 +7,7 @@ import { StudentRoutingModule } from './student-routing.module';
 import { StudentLabsComponent } from './pages/student-labs/student-labs.component';
 import { StudentLabComponent } from './pages/student-lab/student-lab.component';
 
-import { TestModule } from 'src/app/ui/test/test.module';
+import { TestModule } from '@app/ui/test/test.module';
 
 @NgModule({
   imports: [

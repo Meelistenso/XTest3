@@ -1,0 +1,28 @@
+:host {
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+table {
+  width: 100%;
+}
+
+.content-center {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-icon {
+  cursor: default;
+}
+
+mat-radio-button {
+  margin-right: 10px;
+}

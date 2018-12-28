@@ -1,41 +1,26 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { throwIfAlreadyLoaded } from './module-import-guard';
-import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { ProgressBarService } from './services/progress-bar.service';
 import { LoggerService } from './services/logger.service';
-import { HomePage } from './pages/home/home.page';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { Error404Page } from './pages/error404/error404.page';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { LoginComponent } from './pages/login/login.component';
+import { UserService } from './services/user.service';
+import { ApiService } from './services/api.service';
+import { AuthGuard } from './services/auth-guard.service';
+import { JwtService } from './services/jwt.service';
 
 @NgModule({
   imports: [
-    ReactiveFormsModule,
     RouterModule,
-    SharedModule
-  ],
-  declarations: [
-    HomePage,
-    Error404Page,
-    HeaderComponent,
-    SearchBarComponent,
-    FooterComponent,
-    LoginComponent
-  ],
-  exports: [
-    HeaderComponent,
-    SearchBarComponent,
-    FooterComponent
   ],
   providers: [
     LoggerService,
-    ProgressBarService
-  ]
+    ProgressBarService,
+    UserService,
+    AuthGuard,
+    ApiService,
+    JwtService,
+  ],
 })
 
 export class CoreModule {

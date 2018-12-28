@@ -14,7 +14,13 @@ export class DynamicTemplateLoaderComponent implements OnInit {
   constructor(private dtService: DtService) { }
 
   ngOnInit() {
-    this.dt = this.dtService.getDt();
+    this.dt = {
+      component: null,
+      data: {
+        name: 'akf.jakjfnskldjf <i>MEELISTENSO</i>',
+        text: '<app-quote [data]="{name:\'my custon make\', text:\'my custom text\'}">РАКЕТА ПУШКА БОМБА<app-quote>',
+      },
+    };
   }
 
 }

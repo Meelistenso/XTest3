@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TestComponent } from './components/test/test.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { DynamicTemplateModule } from 'src/app/ui/dynamic-template/dynamic-template.module';
+import { SharedModule } from '@app/shared/shared.module';
+import { DynamicTemplateModule } from '@app/ui/dynamic-template/dynamic-template.module';
 
 @NgModule({
   imports: [

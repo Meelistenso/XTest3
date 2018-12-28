@@ -5,7 +5,7 @@ import { StudentComponent } from './pages/student/student.component';
 import { StudentLabsComponent } from './pages/student-labs/student-labs.component';
 import { StudentLabComponent } from './pages/student-lab/student-lab.component';
 
-import { AppConfig } from 'src/app/config/app.config';
+import { AppConfig } from '@app/config/app.config';
 
 const routes: Routes = [
   {

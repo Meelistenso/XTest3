@@ -4,7 +4,9 @@ import {Meta, Title} from '@angular/platform-browser';
 import {NavigationEnd, Router} from '@angular/router';
 import {AppConfig} from './config/app.config';
 import {MatSnackBar} from '@angular/material';
-import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import { _ } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+
+import { UserService } from '@app/core';
 
 declare const require;
 declare const Modernizr;
@@ -19,6 +21,7 @@ export class AppComponent implements OnInit {
   isOnline: boolean;
 
   constructor(private translateService: TranslateService,
+              private userService: UserService,
               private title: Title,
               private meta: Meta,
               private snackBar: MatSnackBar,
@@ -27,6 +30,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.userService.populate();
+
     this.translateService.setDefaultLang('en');
     this.translateService.use('en');
 

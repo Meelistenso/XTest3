@@ -1,3 +1,35 @@
-<p>
-  teacher works!
-</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button (click)="sidenav.toggle()" mat-icon-button>
+      <mat-icon>{{opened ? 'arrow_back_ios' : 'arrow_forward_ios'}}</mat-icon>
+    </button>
+    <span>Groups</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav [(mode)]="over" [(opened)]="opened" [fixedInViewport]="false" [fixedTopGap]="0"
+    [fixedBottomGap]="0">
+    <div class="sidebar-header" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <div class="with-bg"></div>
+      <div>
+        <a>
+          <img class="circle" src="https://static1.squarespace.com/static/590224f13e00bedff63281b3/t/5a3a94600d929714447c463b/1513788516065/Cap.png?format=500w" width="100">
+        </a>
+      </div>
+    </div>
+
+    <mat-nav-list class="sidebar-nav">
+      <a mat-list-item routerLink="/teacher/groups" routerLinkActive="active">Groups</a>
+      <a mat-list-item routerLink="/teacher/none" routerLinkActive="active" color="primary">None</a>
+      <a mat-list-item routerLink="/teacher/none" routerLinkActive="active" color="accent">None</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="component-viewer">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<button mat-button (click)="sidenav.toggle()" fxShow.sm="true" fxShow.gt-sm="false">Menu</button>

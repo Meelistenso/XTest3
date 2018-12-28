@@ -9,6 +9,7 @@ export const AppConfig: IAppConfig = {
     error404: '404',
 
     login: 'login',
+    register: 'register',
 
     teacher: {
       teacher: 'teacher',
@@ -24,7 +25,9 @@ export const AppConfig: IAppConfig = {
 
     dashboard: 'dashboard',
     code: 'code',
-    test: 'test'
+    test: 'test',
+
+    home: 'home'
   },
   endpoints: {
   },

@@ -1,0 +1,23 @@
+:host {
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+table {
+  width: 100%;
+}
+
+.content-center {
+  display: flex;
+  justify-content: center;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-icon {
+  cursor: default;
+}
