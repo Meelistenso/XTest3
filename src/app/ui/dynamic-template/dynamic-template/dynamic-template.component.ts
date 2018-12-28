@@ -58,7 +58,7 @@ export class DynamicTemplateComponent implements OnInit {
   }
 
   private createComponentFactorySync(compiler: Compiler, metadata: Component, componentClass: any): ComponentFactory<any> {
-    const cmpClass = componentClass || class RuntimeComponent { name: string = 'Denys' };
+    const cmpClass = componentClass || class RuntimeComponent { name: string = 'Denys'; };
     const decoratedCmp = Component(metadata)(cmpClass);
 
     @NgModule({

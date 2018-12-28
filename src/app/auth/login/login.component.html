@@ -8,6 +8,7 @@
   <!-- Actual content starts from here -->
   <mat-card-content>
     <form [formGroup]="authForm" class="authForm" (ngSubmit)="onFormSubmit(authForm.value)">
+      <fieldset [disabled]="isSubmitting">
       <table>
         <tr>
           <td colspan="2">
@@ -54,6 +55,7 @@
           <td></td>
         </tr>
       </table>
+    </fieldset>
     </form>
   </mat-card-content>
 </mat-card>
