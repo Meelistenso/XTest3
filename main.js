@@ -111,7 +111,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <app-header class=\"mat-elevation-z6\"></app-header>\n  <div>\n    <router-outlet *ngIf=\"isOnline;else isOffline\"></router-outlet>\n  </div>\n  <ng-template #isOffline>\n    <div>\n      <p class=\"offline-error\">{{'offlineMessage' | translate}}&nbsp;&nbsp;&nbsp;<span>:&nbsp;)</span></p>\n    </div>\n  </ng-template>\n</div>\n<app-footer></app-footer>\n"
+module.exports = "<div fxLayout=\"column\" style=\"height: 100%\">\n  <app-header fxFlex=\"0 0 auto\" class=\"mat-elevation-z6\"></app-header>\n  <div fxLayout=\"column\" fxFlex=\"1 1 auto\" style=\"overflow: auto\">\n    <div fxFlex=\"1 0 auto\" fxLayout=\"column\">\n      <router-outlet *ngIf=\"isOnline;else isOffline\"></router-outlet>\n    </div>\n    <ng-template #isOffline>\n      <div>\n        <p class=\"offline-error\">{{'offlineMessage' | translate}}&nbsp;&nbsp;&nbsp;<span>:&nbsp;)</span></p>\n      </div>\n    </ng-template>\n    <app-footer></app-footer>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -299,9 +299,14 @@ var AppModule = /** @class */ (function () {
                 _core_core_module__WEBPACK_IMPORTED_MODULE_4__["CoreModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
                 _home_home_module__WEBPACK_IMPORTED_MODULE_14__["HomeModule"],
-                _shared__WEBPACK_IMPORTED_MODULE_16__["SharedModule"]
+                _shared__WEBPACK_IMPORTED_MODULE_16__["SharedModule"],
             ],
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"], _shared__WEBPACK_IMPORTED_MODULE_16__["FooterComponent"], _shared__WEBPACK_IMPORTED_MODULE_16__["HeaderComponent"], _app_core_pages_error404_error404_component__WEBPACK_IMPORTED_MODULE_18__["Error404Component"]],
+            declarations: [
+                _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+                _shared__WEBPACK_IMPORTED_MODULE_16__["FooterComponent"],
+                _shared__WEBPACK_IMPORTED_MODULE_16__["HeaderComponent"],
+                _app_core_pages_error404_error404_component__WEBPACK_IMPORTED_MODULE_18__["Error404Component"],
+            ],
             providers: [
                 { provide: _config_app_config__WEBPACK_IMPORTED_MODULE_2__["APP_CONFIG"], useValue: _config_app_config__WEBPACK_IMPORTED_MODULE_2__["AppConfig"] },
                 {
@@ -447,7 +452,7 @@ module.exports = ":host {\n  max-width: 300px;\n  display: block;\n  margin: 0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Card container that binds all togather -->\n<mat-card>\n  <!-- Title of an Card -->\n  <mat-card-title>\n    {{ 'login' | translate }}\n  </mat-card-title>\n\n  <!-- Actual content starts from here -->\n  <mat-card-content>\n    <form [formGroup]=\"authForm\" class=\"authForm\" (ngSubmit)=\"onFormSubmit(authForm.value)\">\n      <fieldset [disabled]=\"isSubmitting\">\n      <table>\n        <tr>\n          <td colspan=\"2\">\n            <mat-form-field>\n              <input formControlName=\"Email\" matInput [placeholder]=\"'email' | translate\" required>\n              <!-- <mat-hint>use like : demo@demo.com</mat-hint> -->\n              <mat-error>\n                <span *ngIf=\"!authForm.get('Email').valid && authForm.get('Email').touched\">\n                  {{ 'invalidEmail' | translate }}\n                </span>\n              </mat-error>\n            </mat-form-field>\n          </td>\n        </tr>\n        <tr>\n          <td colspan=\"2\">\n            <mat-form-field>\n              <input matInput formControlName=\"Password\" [placeholder]=\"'password' | translate\" [type]=\"hidePassword ? 'password' : 'text'\">\n              <mat-icon matSuffix (click)=\"hidePassword = !hidePassword\">\n                {{hidePassword ? 'visibility_off' : 'visibility'}}\n              </mat-icon>\n              <mat-error>\n                <span *ngIf=\"!authForm.get('Password').valid && authForm.get('Password').touched\">\n                    {{'invalidPassword' | translate }}\n                </span>\n              </mat-error>\n            </mat-form-field>\n          </td>\n        </tr>\n        <tr>\n          <td colspan=\"2\" class=\"content-center\">\n            <button mat-raised-button color=\"accent\" [disabled]=\"!authForm.valid || IsAccepted==0\">{{'submit' | translate}}</button>\n          </td>\n        </tr>\n        <tr>\n          <td colspan=\"2\">\n              <p class=\"text-xs-center\">\n                <br>\n                <a [routerLink]=\"['/register']\">Need an account?</a>\n              </p>\n          </td>\n        </tr>\n        <tr>\n          <td></td>\n        </tr>\n      </table>\n    </fieldset>\n    </form>\n  </mat-card-content>\n</mat-card>"
+module.exports = "<!-- Card container that binds all togather -->\n<mat-card>\n  <!-- Title of an Card -->\n  <mat-card-title>\n    {{ 'login' | translate }}\n  </mat-card-title>\n\n  <!-- Actual content starts from here -->\n  <mat-card-content>\n    <form [formGroup]=\"authForm\" class=\"authForm\" (ngSubmit)=\"onFormSubmit(authForm.value)\">\n      <fieldset [disabled]=\"isSubmitting\">\n      <table>\n        <tr>\n          <td colspan=\"2\">\n            <mat-form-field>\n              <input formControlName=\"Email\" matInput [placeholder]=\"'email' | translate\" required>\n              <!-- <mat-hint>use like : demo@demo.com</mat-hint> -->\n              <mat-error>\n                <span *ngIf=\"!authForm.get('Email').valid && authForm.get('Email').touched\">\n                  {{ 'invalidEmail' | translate }}\n                </span>\n              </mat-error>\n            </mat-form-field>\n          </td>\n        </tr>\n        <tr>\n          <td colspan=\"2\">\n            <mat-form-field>\n              <input matInput formControlName=\"Password\" [placeholder]=\"'password' | translate\" [type]=\"hidePassword ? 'password' : 'text'\">\n              <mat-icon matSuffix (click)=\"hidePassword = !hidePassword\">\n                {{hidePassword ? 'visibility_off' : 'visibility'}}\n              </mat-icon>\n              <mat-error>\n                <span *ngIf=\"!authForm.get('Password').valid && authForm.get('Password').touched\">\n                    {{'invalidPassword' | translate }}\n                </span>\n              </mat-error>\n            </mat-form-field>\n          </td>\n        </tr>\n        <tr>\n          <td colspan=\"2\" class=\"content-center\">\n            <button mat-raised-button color=\"accent\" [disabled]=\"!authForm.valid || IsAccepted==0\">{{'submit' | translate}}</button>\n          </td>\n        </tr>\n        <tr>\n          <td colspan=\"2\">\n              <p class=\"text-xs-center\">\n                <br>\n                <a [routerLink]=\"['/register']\">Need an account?</a>\n              </p>\n          </td>\n        </tr>\n        <tr>\n          <td></td>\n        </tr>\n      </table>\n    </fieldset>\n    </form>\n  </mat-card-content>\n</mat-card>\n<br><a (click)=\"setUser(1)\">student</a>\n<br><a (click)=\"setUser(2)\">teacher</a>\n<br><a (click)=\"setUser(3)\">admin</a>"
 
 /***/ }),
 
@@ -541,6 +546,17 @@ var LoginComponent = /** @class */ (function () {
     LoginComponent.prototype.onFormSubmit = function (form) {
         console.log(form);
         this.submitForm();
+    };
+    // For dev purposes
+    LoginComponent.prototype.setUser = function (role) {
+        this.userService.setAuth({
+            email: 'mail.gmail.com',
+            token: '123123123123123',
+            username: 'Meelistenso',
+            bio: '- Ping! - Pong!',
+            image: 'https://image.flaticon.com/icons/png/512/149/149071.png',
+            role: role
+        });
     };
     LoginComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2108,7 +2124,7 @@ module.exports = "<footer>\n    <div fxFlex fxLayout=\"row\" fxLayout.xs=\"colum
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "footer {\n  padding: 0.5rem 1rem;\n  color: #ffffff;\n  background: #3f51b5;\n  margin-top: 2rem;\n  position: -webkit-sticky;\n  position: sticky;\n  top: 100%; }\n  footer img {\n    width: 25%; }\n  .footer-xs {\n  text-align: center;\n  padding-top: 1rem; }\n"
+module.exports = "footer {\n  padding: 0.5rem 1rem;\n  color: #ffffff;\n  background: #3f51b5;\n  position: -webkit-sticky;\n  position: sticky;\n  top: 100%; }\n  footer img {\n    width: 25%; }\n  .footer-xs {\n  text-align: center;\n  padding-top: 1rem; }\n"
 
 /***/ }),
 
@@ -2389,12 +2405,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _modules_material_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/material.module */ "./src/app/shared/modules/material.module.ts");
+/* harmony import */ var _ui__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ui */ "./src/app/shared/ui/index.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -2412,34 +2430,129 @@ var SharedModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _modules_material_module__WEBPACK_IMPORTED_MODULE_9__["MaterialModule"],
                 _angular_flex_layout__WEBPACK_IMPORTED_MODULE_1__["FlexLayoutModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
+                _modules_material_module__WEBPACK_IMPORTED_MODULE_9__["MaterialModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"],
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateModule"].forChild(),
             ],
             declarations: [
-                _components_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_3__["SpinnerComponent"],
+                _ui__WEBPACK_IMPORTED_MODULE_10__["DrawerComponent"],
                 _components_list_errors_list_errors_component__WEBPACK_IMPORTED_MODULE_4__["ListErrorsComponent"],
-                _directives_show_authed_directive__WEBPACK_IMPORTED_MODULE_5__["ShowAuthedDirective"],
                 _components_search_bar_search_bar_component__WEBPACK_IMPORTED_MODULE_6__["SearchBarComponent"],
+                _directives_show_authed_directive__WEBPACK_IMPORTED_MODULE_5__["ShowAuthedDirective"],
+                _components_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_3__["SpinnerComponent"],
             ],
             exports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _modules_material_module__WEBPACK_IMPORTED_MODULE_9__["MaterialModule"],
+                _ui__WEBPACK_IMPORTED_MODULE_10__["DrawerComponent"],
                 _angular_flex_layout__WEBPACK_IMPORTED_MODULE_1__["FlexLayoutModule"],
-                _components_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_3__["SpinnerComponent"],
-                _components_list_errors_list_errors_component__WEBPACK_IMPORTED_MODULE_4__["ListErrorsComponent"],
-                _directives_show_authed_directive__WEBPACK_IMPORTED_MODULE_5__["ShowAuthedDirective"],
-                _components_search_bar_search_bar_component__WEBPACK_IMPORTED_MODULE_6__["SearchBarComponent"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
+                _components_list_errors_list_errors_component__WEBPACK_IMPORTED_MODULE_4__["ListErrorsComponent"],
+                _modules_material_module__WEBPACK_IMPORTED_MODULE_9__["MaterialModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateModule"]
+                _components_search_bar_search_bar_component__WEBPACK_IMPORTED_MODULE_6__["SearchBarComponent"],
+                _directives_show_authed_directive__WEBPACK_IMPORTED_MODULE_5__["ShowAuthedDirective"],
+                _components_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_3__["SpinnerComponent"],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateModule"],
             ]
         })
     ], SharedModule);
     return SharedModule;
 }());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/ui/drawer/drawer.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/shared/ui/drawer/drawer.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ":host {\n  display: contents;\n}\n\nmat-sidenav {\n  width: 250px;\n}\n\n.container {\n  -ms-flex: 1 1 auto;\n      flex: 1 1 auto;\n}\n\n.sidenav-sticky {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/shared/ui/drawer/drawer.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/shared/ui/drawer/drawer.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-toolbar color=\"primary\">\n  <mat-toolbar-row>\n    <button (click)=\"sidenav.toggle()\" mat-icon-button>\n      <mat-icon>{{opened ? 'arrow_back_ios' : 'arrow_forward_ios'}}</mat-icon>\n    </button>\n    <ng-content select=\"[header]\"></ng-content>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<mat-sidenav-container class=\"container\" fxLayout=\"row\">\n  <mat-sidenav #sidenav [mode]=\"over\" [(opened)]=\"opened\" [fixedInViewport]=\"false\" [fixedTopGap]=\"0\" [fixedBottomGap]=\"0\"\n    fxFlex=\"0 0 auto\" role=\"navigation\" (scroll)=\"checkSidebarScroll(this)\">\n    <div class=\"sidenav-sticky\" [ngStyle]=\"{'margin-top': sidebarOffsetTop + 'px'}\">\n      <ng-content select=\"[sidenav]\"></ng-content>\n    </div>\n  </mat-sidenav>\n\n  <mat-sidenav-content fxFlex=\"1 1 auto\">\n    <ng-content select=\"[content]\"></ng-content>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
+
+/***/ }),
+
+/***/ "./src/app/shared/ui/drawer/drawer.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/shared/ui/drawer/drawer.component.ts ***!
+  \******************************************************/
+/*! exports provided: DrawerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawerComponent", function() { return DrawerComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/flex-layout/core */ "./node_modules/@angular/flex-layout/esm5/core.es5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DrawerComponent = /** @class */ (function () {
+    function DrawerComponent(media) {
+        var _this = this;
+        this.opened = true;
+        this.over = 'side';
+        this.watcher = media.subscribe(function (change) {
+            if (change.mqAlias === 'sm' || change.mqAlias === 'xs') {
+                _this.opened = false;
+                _this.over = 'over';
+            }
+            else {
+                _this.opened = true;
+                _this.over = 'side';
+            }
+        });
+    }
+    DrawerComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-drawer',
+            template: __webpack_require__(/*! ./drawer.component.html */ "./src/app/shared/ui/drawer/drawer.component.html"),
+            styles: [__webpack_require__(/*! ./drawer.component.css */ "./src/app/shared/ui/drawer/drawer.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__["ObservableMedia"]])
+    ], DrawerComponent);
+    return DrawerComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/ui/index.ts":
+/*!************************************!*\
+  !*** ./src/app/shared/ui/index.ts ***!
+  \************************************/
+/*! exports provided: DrawerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _drawer_drawer_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./drawer/drawer.component */ "./src/app/shared/ui/drawer/drawer.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DrawerComponent", function() { return _drawer_drawer_component__WEBPACK_IMPORTED_MODULE_0__["DrawerComponent"]; });
+
 
 
 
@@ -2535,7 +2648,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
 var environment = {
     production: false,
-    api_url: 'https://antiphrastical-jack.000webhostapp.com',
+    api_url: 'https://xtestapp.herokuapp.com',
 };
 
 

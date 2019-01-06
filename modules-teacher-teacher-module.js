@@ -175,7 +175,7 @@ module.exports = ".tree-progress-bar {\n  margin-left: 30px;\n}\n\na {\n  text-d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-tree [dataSource]=\"dataSource\" [treeControl]=\"treeControl\">\n  <mat-tree-node *matTreeNodeDef=\"let node\" matTreeNodePadding>\n    <button mat-icon-button disabled></button>\n    <a [routerLink]=\"['/teacher/groups', node.id]\">{{node.groupname}}</a>\n  </mat-tree-node>\n  <mat-tree-node *matTreeNodeDef=\"let node; when: hasChild\" matTreeNodePadding>\n    <button mat-icon-button\n            [attr.aria-label]=\"'toggle ' + node.groupname\" matTreeNodeToggle>\n      <mat-icon class=\"mat-icon-rtl-mirror\">\n        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}\n      </mat-icon>\n    </button>\n    <a [routerLink]=\"['/teacher/groups', node.id]\">{{node.groupname}}</a>\n    <mat-progress-bar *ngIf=\"node.isLoading\"\n                      mode=\"indeterminate\"\n                      class=\"tree-progress-bar\"></mat-progress-bar>\n  </mat-tree-node>\n</mat-tree>"
+module.exports = "<mat-tree [dataSource]=\"dataSource\" [treeControl]=\"treeControl\">\n  <mat-tree-node *matTreeNodeDef=\"let node\" matTreeNodePadding>\n    <button mat-icon-button disabled></button>\n    <a [routerLink]=\"['/teacher/groups', node.id]\">{{node.groupname}}</a>\n  </mat-tree-node>\n  <mat-tree-node *matTreeNodeDef=\"let node; when: hasChild\" matTreeNodePadding>\n    <button mat-icon-button [attr.aria-label]=\"'toggle ' + node.groupname\" matTreeNodeToggle>\n      <mat-icon class=\"mat-icon-rtl-mirror\">\n        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}\n      </mat-icon>\n    </button>\n    <a [routerLink]=\"['/teacher/groups', node.id]\">{{node.groupname}}</a>\n    <mat-progress-bar *ngIf=\"node.isLoading\" mode=\"indeterminate\" class=\"tree-progress-bar\"></mat-progress-bar>\n  </mat-tree-node>\n</mat-tree>\n"
 
 /***/ }),
 
@@ -246,7 +246,7 @@ var TeacherGroupsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".component-viewer {\n  padding: 20px 50px 50px 18px;\n}\n\n.sidebar-nav {\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  /* min-height: 100%; */\n  -ms-flex-direction: column;\n      flex-direction: column;\n}\n\na.active {\n  background: #ffd740;\n}\n\n/* === === === */\n\n.spacer {\n  -ms-flex: 1 1 auto;\n      flex: 1 1 auto;\n}\n\n.container {\n  position: absolute;\n  top: 133px;\n  bottom: 165px;\n  left: 0;\n  right: 0;\n}\n\nmat-sidenav {\n  width: 250px;\n}\n\n.circle {\n  border-radius: 50%;\n}\n\n.with-bg {\n  background: url('https://www.intheblack.com/~/media/intheblack/allimages/sponsored-content/2018/dexus-office-space.jpg') no-repeat center;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: -1;\n  max-height: 130px;\n}\n\n.no-shadow {\n  box-shadow: none !important;\n}\n\n/*\n::ng-deep .mat-expansion-panel-body {\n  padding: 0px !important;\n  padding-left: 10px !important;\n} */\n\n.header-box-shadow {\n  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);\n}\n\n.bottom-to-top {\n  border: 0px;\n  border-right: 1px;\n  border-style: solid;\n  -o-border-image:\n  linear-gradient(to top, #c1c1c1, rgba(0, 0, 0, 0)) 1 100%;\n     border-image:\n  linear-gradient(to top, #c1c1c1, rgba(0, 0, 0, 0)) 1 100%\n}\n\n.sidebar-header {\n  padding: 30px 0;\n}\n"
+module.exports = ":host {\n  display: contents;\n}\n\n.component-viewer {\n  padding: 20px 50px 50px 18px;\n}\n\n.sidebar-nav {\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  -ms-flex-direction: column;\n      flex-direction: column;\n}\n\na.active {\n  background: #ffd740;\n}\n\n/* === === === */\n\n.circle {\n  border-radius: 50%;\n}\n\n.with-bg {\n  background: url('https://www.intheblack.com/~/media/intheblack/allimages/sponsored-content/2018/dexus-office-space.jpg') no-repeat center;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: -1;\n  max-height: 130px;\n}\n\n/* .header-box-shadow {\n  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);\n} */\n\n/* .bottom-to-top {\n  border: 0px;\n  border-right: 1px;\n  border-style: solid;\n  border-image:\n  linear-gradient(to top, #c1c1c1, rgba(0, 0, 0, 0)) 1 100%\n} */\n\n.sidebar-header {\n  padding: 30px 0;\n}\n"
 
 /***/ }),
 
@@ -257,7 +257,7 @@ module.exports = ".component-viewer {\n  padding: 20px 50px 50px 18px;\n}\n\n.si
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\n  <mat-toolbar-row>\n    <button (click)=\"sidenav.toggle()\" mat-icon-button>\n      <mat-icon>{{opened ? 'arrow_back_ios' : 'arrow_forward_ios'}}</mat-icon>\n    </button>\n    <span>Groups</span>\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-sidenav-container class=\"container\">\n  <mat-sidenav #sidenav [(mode)]=\"over\" [(opened)]=\"opened\" [fixedInViewport]=\"false\" [fixedTopGap]=\"0\"\n    [fixedBottomGap]=\"0\">\n    <div class=\"sidebar-header\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayoutGap=\"10px\">\n      <div class=\"with-bg\"></div>\n      <div>\n        <a>\n          <img class=\"circle\" src=\"https://static1.squarespace.com/static/590224f13e00bedff63281b3/t/5a3a94600d929714447c463b/1513788516065/Cap.png?format=500w\" width=\"100\">\n        </a>\n      </div>\n    </div>\n\n    <mat-nav-list class=\"sidebar-nav\">\n      <a mat-list-item routerLink=\"/teacher/groups\" routerLinkActive=\"active\">Groups</a>\n      <a mat-list-item routerLink=\"/teacher/none\" routerLinkActive=\"active\" color=\"primary\">None</a>\n      <a mat-list-item routerLink=\"/teacher/none\" routerLinkActive=\"active\" color=\"accent\">None</a>\n    </mat-nav-list>\n  </mat-sidenav>\n\n  <mat-sidenav-content>\n    <div class=\"component-viewer\">\n      <router-outlet></router-outlet>\n    </div>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n\n<button mat-button (click)=\"sidenav.toggle()\" fxShow.sm=\"true\" fxShow.gt-sm=\"false\">Menu</button>\n"
+module.exports = "<app-drawer>\n  <div header>\n    <span>Groups</span>\n  </div>\n  <div sidenav>\n    <div class=\"sidebar-header\" fxLayout=\"column\" fxLayoutAlign=\"center center\" fxLayoutGap=\"10px\">\n      <div class=\"with-bg\"></div>\n      <div>\n        <a>\n          <img class=\"circle\" src=\"https://static1.squarespace.com/static/590224f13e00bedff63281b3/t/5a3a94600d929714447c463b/1513788516065/Cap.png?format=500w\"\n            width=\"100\">\n        </a>\n      </div>\n    </div>\n    <mat-nav-list class=\"sidebar-nav\">\n      <a mat-list-item routerLink=\"/teacher/groups\" routerLinkActive=\"active\">Groups</a>\n      <a mat-list-item routerLink=\"/teacher/none\" routerLinkActive=\"active\" color=\"primary\">None</a>\n      <a mat-list-item routerLink=\"/teacher/none\" routerLinkActive=\"active\" color=\"accent\">None</a>\n    </mat-nav-list>\n  </div>\n  <div content>\n    <div class=\"component-viewer\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n</app-drawer>\n"
 
 /***/ }),
 
@@ -272,45 +272,22 @@ module.exports = "<mat-toolbar color=\"primary\">\n  <mat-toolbar-row>\n    <but
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherComponent", function() { return TeacherComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
 
 var TeacherComponent = /** @class */ (function () {
-    function TeacherComponent(media) {
-        var _this = this;
-        this.opened = true;
-        this.over = 'side';
-        this.expandHeight = '42px';
-        this.collapseHeight = '42px';
-        this.displayMode = 'flat';
-        this.watcher = media.subscribe(function (change) {
-            if (change.mqAlias === 'sm' || change.mqAlias === 'xs') {
-                _this.opened = false;
-                _this.over = 'over';
-            }
-            else {
-                _this.opened = true;
-                _this.over = 'side';
-            }
-        });
+    function TeacherComponent() {
     }
-    TeacherComponent.prototype.ngOnInit = function () { };
     TeacherComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-teacher',
             template: __webpack_require__(/*! ./teacher.component.html */ "./src/app/modules/teacher/pages/teacher/teacher.component.html"),
             styles: [__webpack_require__(/*! ./teacher.component.css */ "./src/app/modules/teacher/pages/teacher/teacher.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_flex_layout__WEBPACK_IMPORTED_MODULE_1__["ObservableMedia"]])
+        })
     ], TeacherComponent);
     return TeacherComponent;
 }());
