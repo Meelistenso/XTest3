@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button (click)="sidenav.toggle()" mat-icon-button>
+      <mat-icon>{{opened ? 'arrow_back_ios' : 'arrow_forward_ios'}}</mat-icon>
+    </button>
+    <ng-content select="[header]"></ng-content>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="container" fxLayout="row">
+  <mat-sidenav #sidenav [mode]="over" [(opened)]="opened" [fixedInViewport]="false" [fixedTopGap]="0" [fixedBottomGap]="0"
+    fxFlex="0 0 auto" role="navigation" (scroll)="checkSidebarScroll(this)">
+    <div class="sidenav-sticky" [ngStyle]="{'margin-top': sidebarOffsetTop + 'px'}">
+      <ng-content select="[sidenav]"></ng-content>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content fxFlex="1 1 auto">
+    <ng-content select="[content]"></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

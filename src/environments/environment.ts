@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  api_url: 'https://antiphrastical-jack.000webhostapp.com',
+  api_url: 'https://xtestapp.herokuapp.com',
 };

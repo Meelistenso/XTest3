@@ -8,7 +8,7 @@ import {
   NgForm
 } from '@angular/forms';
 
-import { Errors, UserService } from '@app/core';
+import { Errors, UserService, UserRole } from '@app/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -83,5 +83,17 @@ export class LoginComponent implements OnInit {
   onFormSubmit(form: NgForm) {
     console.log(form);
     this.submitForm();
+  }
+
+  // For dev purposes
+  setUser(role: UserRole) {
+    this.userService.setAuth({
+      email: 'mail.gmail.com',
+      token: '123123123123123',
+      username: 'Meelistenso',
+      bio: '- Ping! - Pong!',
+      image: 'https://image.flaticon.com/icons/png/512/149/149071.png',
+      role: role
+    });
   }
 }

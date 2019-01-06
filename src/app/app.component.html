@@ -1,12 +1,14 @@
-<div>
-  <app-header class="mat-elevation-z6"></app-header>
-  <div>
-    <router-outlet *ngIf="isOnline;else isOffline"></router-outlet>
-  </div>
-  <ng-template #isOffline>
-    <div>
-      <p class="offline-error">{{'offlineMessage' | translate}}&nbsp;&nbsp;&nbsp;<span>:&nbsp;)</span></p>
+<div fxLayout="column" style="height: 100%">
+  <app-header fxFlex="0 0 auto" class="mat-elevation-z6"></app-header>
+  <div fxLayout="column" fxFlex="1 1 auto" style="overflow: auto">
+    <div fxFlex="1 0 auto" fxLayout="column">
+      <router-outlet *ngIf="isOnline;else isOffline"></router-outlet>
     </div>
-  </ng-template>
+    <ng-template #isOffline>
+      <div>
+        <p class="offline-error">{{'offlineMessage' | translate}}&nbsp;&nbsp;&nbsp;<span>:&nbsp;)</span></p>
+      </div>
+    </ng-template>
+    <app-footer></app-footer>
+  </div>
 </div>
-<app-footer></app-footer>

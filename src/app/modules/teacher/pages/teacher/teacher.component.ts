@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  NgZone,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { ObservableMedia, MediaChange } from '@angular/flex-layout';
 import { Subscription } from 'rxjs/Subscription';
@@ -8,28 +17,6 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './teacher.component.html',
   styleUrls: ['./teacher.component.css']
 })
-export class TeacherComponent implements OnInit {
-  opened = true;
-  over = 'side';
-  expandHeight = '42px';
-  collapseHeight = '42px';
-  displayMode = 'flat';
-  // overlap = false;
-
-  watcher: Subscription;
-
-  constructor(media: ObservableMedia) {
-    this.watcher = media.subscribe((change: MediaChange) => {
-      if (change.mqAlias === 'sm' || change.mqAlias === 'xs') {
-        this.opened = false;
-        this.over = 'over';
-      } else {
-        this.opened = true;
-        this.over = 'side';
-      }
-    });
-  }
-
-  ngOnInit() {}
+export class TeacherComponent {
 
 }

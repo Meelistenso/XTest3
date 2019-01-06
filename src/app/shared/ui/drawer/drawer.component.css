@@ -1,0 +1,16 @@
+:host {
+  display: contents;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+.container {
+  flex: 1 1 auto;
+}
+
+.sidenav-sticky {
+  position: sticky;
+  top: 0;
+}

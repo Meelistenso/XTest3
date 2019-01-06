@@ -36,9 +36,14 @@ import { Error404Component } from '@app/core/pages/error404/error404.component';
     CoreModule,
     AppRoutingModule,
     HomeModule,
-    SharedModule
+    SharedModule,
   ],
-  declarations: [AppComponent, FooterComponent, HeaderComponent, Error404Component],
+  declarations: [
+    AppComponent,
+    FooterComponent,
+    HeaderComponent,
+    Error404Component,
+  ],
   providers: [
     { provide: APP_CONFIG, useValue: AppConfig },
     {

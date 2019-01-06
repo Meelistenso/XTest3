@@ -11,32 +11,36 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './modules/material.module';
 
+import { DrawerComponent } from './ui';
+
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule,
     FlexLayoutModule,
     FormsModule,
+    MaterialModule,
     ReactiveFormsModule,
     TranslateModule.forChild(),
   ],
   declarations: [
-    SpinnerComponent,
+    DrawerComponent,
     ListErrorsComponent,
-    ShowAuthedDirective,
     SearchBarComponent,
+    ShowAuthedDirective,
+    SpinnerComponent,
   ],
   exports: [
     CommonModule,
-    MaterialModule,
+    DrawerComponent,
     FlexLayoutModule,
-    SpinnerComponent,
-    ListErrorsComponent,
-    ShowAuthedDirective,
-    SearchBarComponent,
     FormsModule,
+    ListErrorsComponent,
+    MaterialModule,
     ReactiveFormsModule,
-    TranslateModule
+    SearchBarComponent,
+    ShowAuthedDirective,
+    SpinnerComponent,
+    TranslateModule,
   ]
 })
 export class SharedModule { }
