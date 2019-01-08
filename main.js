@@ -457,7 +457,7 @@ var AuthModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  max-width: 300px;\n  display: block;\n  margin: 0 auto;\n  margin-top: 50px;\n}\n\ntable {\n  width: 100%;\n}\n\n.content-center {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: center;\n      justify-content: center;\n}\n\nmat-form-field {\n  width: 100%;\n}\n\nmat-icon {\n  cursor: default;\n}\n"
+module.exports = ":host {\n  max-width: 500px;\n  display: block;\n  margin: 0 auto;\n  margin-top: 50px;\n}\n\ntable {\n  width: 100%;\n}\n\n.content-center {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: center;\n      justify-content: center;\n}\n\nmat-form-field {\n  width: 100%;\n}\n\nmat-icon {\n  cursor: default;\n}\n"
 
 /***/ }),
 
