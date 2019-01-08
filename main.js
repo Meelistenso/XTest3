@@ -59,7 +59,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _config_app_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config/app.config */ "./src/app/config/app.config.ts");
-/* harmony import */ var _core_pages_error404_error404_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./core/pages/error404/error404.component */ "./src/app/core/pages/error404/error404.component.ts");
+/* harmony import */ var _app_core_pages_error404_error404_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @app/core/pages/error404/error404.component */ "./src/app/core/pages/error404/error404.component.ts");
+/* harmony import */ var _app_core_pages_subject_subject_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @app/core/pages/subject/subject.component */ "./src/app/core/pages/subject/subject.component.ts");
+/* harmony import */ var _app_core_pages_code_info_code_info_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @app/core/pages/code-info/code-info.component */ "./src/app/core/pages/code-info/code-info.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -71,10 +73,15 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 // import { HomePage } from './core/pages/home/home.page';
 
+
+
 var routes = [
     { path: '', redirectTo: '/' + _config_app_config__WEBPACK_IMPORTED_MODULE_2__["AppConfig"].routes.home, pathMatch: 'full' },
     { path: _config_app_config__WEBPACK_IMPORTED_MODULE_2__["AppConfig"].routes.home, loadChildren: './home/home.module#HomeModule' },
-    { path: _config_app_config__WEBPACK_IMPORTED_MODULE_2__["AppConfig"].routes.error404, component: _core_pages_error404_error404_component__WEBPACK_IMPORTED_MODULE_3__["Error404Component"] },
+    { path: _config_app_config__WEBPACK_IMPORTED_MODULE_2__["AppConfig"].routes.error404, component: _app_core_pages_error404_error404_component__WEBPACK_IMPORTED_MODULE_3__["Error404Component"] },
+    // { path: AppConfig.routes.subjects, component: SubjectComponent },
+    { path: _config_app_config__WEBPACK_IMPORTED_MODULE_2__["AppConfig"].routes.subject, component: _app_core_pages_subject_subject_component__WEBPACK_IMPORTED_MODULE_4__["SubjectComponent"] },
+    { path: _config_app_config__WEBPACK_IMPORTED_MODULE_2__["AppConfig"].routes.code, component: _app_core_pages_code_info_code_info_component__WEBPACK_IMPORTED_MODULE_5__["CodeInfoComponent"] },
     { path: _config_app_config__WEBPACK_IMPORTED_MODULE_2__["AppConfig"].routes.teacher.teacher, loadChildren: './modules/teacher/teacher.module#TeacherModule' },
     { path: _config_app_config__WEBPACK_IMPORTED_MODULE_2__["AppConfig"].routes.student.student, loadChildren: './modules/student/student.module#StudentModule' },
     { path: _config_app_config__WEBPACK_IMPORTED_MODULE_2__["AppConfig"].routes.admin.admin, loadChildren: './modules/admin/admin.module#AdminModule' },
@@ -252,12 +259,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./shared */ "./src/app/shared/index.ts");
 /* harmony import */ var _webpack_translate_loader__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./webpack-translate-loader */ "./src/app/webpack-translate-loader.ts");
 /* harmony import */ var _app_core_pages_error404_error404_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @app/core/pages/error404/error404.component */ "./src/app/core/pages/error404/error404.component.ts");
+/* harmony import */ var _app_core_pages_subject_subject_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @app/core/pages/subject/subject.component */ "./src/app/core/pages/subject/subject.component.ts");
+/* harmony import */ var _app_core_pages_code_info_code_info_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @app/core/pages/code-info/code-info.component */ "./src/app/core/pages/code-info/code-info.component.ts");
+/* harmony import */ var _app_ui_dynamic_template_dynamic_template_module__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @app/ui/dynamic-template/dynamic-template.module */ "./src/app/ui/dynamic-template/dynamic-template.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -300,12 +313,15 @@ var AppModule = /** @class */ (function () {
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
                 _home_home_module__WEBPACK_IMPORTED_MODULE_14__["HomeModule"],
                 _shared__WEBPACK_IMPORTED_MODULE_16__["SharedModule"],
+                _app_ui_dynamic_template_dynamic_template_module__WEBPACK_IMPORTED_MODULE_21__["DynamicTemplateModule"],
             ],
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _shared__WEBPACK_IMPORTED_MODULE_16__["FooterComponent"],
                 _shared__WEBPACK_IMPORTED_MODULE_16__["HeaderComponent"],
                 _app_core_pages_error404_error404_component__WEBPACK_IMPORTED_MODULE_18__["Error404Component"],
+                _app_core_pages_subject_subject_component__WEBPACK_IMPORTED_MODULE_19__["SubjectComponent"],
+                _app_core_pages_code_info_code_info_component__WEBPACK_IMPORTED_MODULE_20__["CodeInfoComponent"]
             ],
             providers: [
                 { provide: _config_app_config__WEBPACK_IMPORTED_MODULE_2__["APP_CONFIG"], useValue: _config_app_config__WEBPACK_IMPORTED_MODULE_2__["AppConfig"] },
@@ -814,8 +830,10 @@ var AppConfig = {
         admin: {
             admin: 'admin',
         },
+        subjects: 'subjects',
+        subject: 'subjects/:id',
         dashboard: 'dashboard',
-        code: 'code',
+        code: 'codes/:id',
         test: 'test',
         home: 'home'
     },
@@ -846,6 +864,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_api_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/api.service */ "./src/app/core/services/api.service.ts");
 /* harmony import */ var _services_auth_guard_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/auth-guard.service */ "./src/app/core/services/auth-guard.service.ts");
 /* harmony import */ var _services_jwt_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/jwt.service */ "./src/app/core/services/jwt.service.ts");
+/* harmony import */ var _services_subject_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./services/subject.service */ "./src/app/core/services/subject.service.ts");
+/* harmony import */ var _services_code_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services/code.service */ "./src/app/core/services/code.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -858,6 +878,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+
+
 
 
 
@@ -883,6 +905,8 @@ var CoreModule = /** @class */ (function () {
                 _services_auth_guard_service__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"],
                 _services_api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"],
                 _services_jwt_service__WEBPACK_IMPORTED_MODULE_8__["JwtService"],
+                _services_subject_service__WEBPACK_IMPORTED_MODULE_9__["SubjectService"],
+                _services_code_service__WEBPACK_IMPORTED_MODULE_10__["CodeService"],
             ],
         }),
         __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"])()), __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["SkipSelf"])()),
@@ -899,7 +923,7 @@ var CoreModule = /** @class */ (function () {
 /*!*******************************!*\
   !*** ./src/app/core/index.ts ***!
   \*******************************/
-/*! exports provided: CoreModule, ApiService, AuthGuard, JwtService, LoggerService, ProgressBarService, UserService, UserRole, HttpTokenInterceptor */
+/*! exports provided: CoreModule, ApiService, AuthGuard, JwtService, LoggerService, ProgressBarService, UserService, SubjectService, CodeService, UserRole, HttpTokenInterceptor */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -919,6 +943,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProgressBarService", function() { return _services__WEBPACK_IMPORTED_MODULE_1__["ProgressBarService"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return _services__WEBPACK_IMPORTED_MODULE_1__["UserService"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SubjectService", function() { return _services__WEBPACK_IMPORTED_MODULE_1__["SubjectService"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CodeService", function() { return _services__WEBPACK_IMPORTED_MODULE_1__["CodeService"]; });
 
 /* harmony import */ var _models__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./models */ "./src/app/core/models/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserRole", function() { return _models__WEBPACK_IMPORTED_MODULE_2__["UserRole"]; });
@@ -1057,6 +1085,151 @@ function throwIfAlreadyLoaded(parentModule, moduleName) {
 
 /***/ }),
 
+/***/ "./src/app/core/pages/code-info/code-info.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/core/pages/code-info/code-info.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"code-info\">\n  <h1>{{codeInfo?.article?.title}}</h1><br>\n  <h4>{{codeInfo?.article?.subtitle}}</h4><br>\n\n  <mat-chip-list *ngIf=\"codeInfo?.article?.tags\">\n    <mat-chip *ngFor=\"let tag of codeInfo.article.tags\">\n      {{tag}}\n    </mat-chip>\n  </mat-chip-list>\n\n  <app-dynamic-template-loader *ngIf=\"codeInfo?.article?.shortDescription\" [template]=\"codeInfo.article.shortDescription\"></app-dynamic-template-loader>\n\n  <mat-toolbar fxLayout=\"row wrap\" fxLayoutAlign=\"center center\">\n    <a mat-raised-button [disabled]=\"!!codeId\" [routerLink]=\"['/coding', codeId]\">Кодування</a>\n    <a mat-raised-button [disabled]=\"!!decodeId\" [routerLink]=\"['/decoding', decodeId]\">Декодування</a>\n    <a mat-raised-button [disabled]=\"!!testId\" [routerLink]=\"['/test', testId]\">Тест</a>\n  </mat-toolbar>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/core/pages/code-info/code-info.component.scss":
+/*!***************************************************************!*\
+  !*** ./src/app/core/pages/code-info/code-info.component.scss ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".code-info {\n  max-width: 800px;\n  margin: 1.5625rem auto; }\n\nh1 {\n  font-size: 42px;\n  font-size: 2.625rem;\n  font-weight: 900;\n  margin: 0 1.5625rem 0 0; }\n\na {\n  margin-right: 25px; }\n"
+
+/***/ }),
+
+/***/ "./src/app/core/pages/code-info/code-info.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/core/pages/code-info/code-info.component.ts ***!
+  \*************************************************************/
+/*! exports provided: CodeInfoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CodeInfoComponent", function() { return CodeInfoComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _app_core_services_code_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @app/core/services/code.service */ "./src/app/core/services/code.service.ts");
+/* harmony import */ var _angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/flex-layout/core */ "./node_modules/@angular/flex-layout/esm5/core.es5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var CodeInfoComponent = /** @class */ (function () {
+    function CodeInfoComponent(route, codeService, media) {
+        var _this = this;
+        this.route = route;
+        this.codeService = codeService;
+        this.codeInfo = null;
+        this.columns = 2;
+        this.rowHeight = '2:1';
+        this.watcher = media.subscribe(function (change) {
+            if (change) {
+                if (change.mqAlias === 'xs') {
+                    _this.columns = 1;
+                    _this.rowHeight = '2:1';
+                }
+                else if (change.mqAlias === 'sm') {
+                    _this.columns = 1;
+                    _this.rowHeight = '2:1';
+                }
+                else if (change.mqAlias === 'md') {
+                    _this.columns = 2;
+                    _this.rowHeight = '3:1';
+                }
+                else {
+                    _this.columns = 2;
+                    _this.rowHeight = '3:1';
+                }
+            }
+        });
+        this.sub = this.route.params.subscribe(function (params) {
+            if (!params['id']) {
+                return;
+            }
+            _this.id = +params['id'];
+            _this.unsub(_this.codeInfoSubscription);
+            _this.codeInfoSubscription = _this.codeService
+                .getCodeInfo(_this.id)
+                .subscribe(function (data) {
+                _this.codeInfo = data;
+            });
+        });
+    }
+    Object.defineProperty(CodeInfoComponent.prototype, "codeId", {
+        get: function () {
+            if (this.codeInfo) {
+                return this.codeInfo.article.codeId;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CodeInfoComponent.prototype, "decodeId", {
+        get: function () {
+            if (this.codeInfo) {
+                return this.codeInfo.article.decodeId;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CodeInfoComponent.prototype, "testId", {
+        get: function () {
+            if (this.codeInfo) {
+                return this.codeInfo.article.codeId;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    CodeInfoComponent.prototype.ngOnInit = function () {
+    };
+    CodeInfoComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
+        this.unsub(this.codeInfoSubscription);
+    };
+    CodeInfoComponent.prototype.unsub = function (sub) {
+        if (sub) {
+            sub.unsubscribe();
+        }
+    };
+    CodeInfoComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-code-info',
+            template: __webpack_require__(/*! ./code-info.component.html */ "./src/app/core/pages/code-info/code-info.component.html"),
+            styles: [__webpack_require__(/*! ./code-info.component.scss */ "./src/app/core/pages/code-info/code-info.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _app_core_services_code_service__WEBPACK_IMPORTED_MODULE_2__["CodeService"],
+            _angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_3__["ObservableMedia"]])
+    ], CodeInfoComponent);
+    return CodeInfoComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/core/pages/error404/error404.component.html":
 /*!*************************************************************!*\
   !*** ./src/app/core/pages/error404/error404.component.html ***!
@@ -1114,6 +1287,113 @@ var Error404Component = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], Error404Component);
     return Error404Component;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/core/pages/subject/subject.component.html":
+/*!***********************************************************!*\
+  !*** ./src/app/core/pages/subject/subject.component.html ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-drawer>\n  <div header fxLayout=\"row wrap\" fxLayoutAlign=\"start center\">\n      <h1>{{ subject?.name }}</h1>\n      <h4>{{ subject?.shortdescription}}</h4>\n  </div>\n\n  <div sidenav fxLayout=\"row\" fxLayoutAlign=\"center start\">\n    <mat-form-field class=\"search-form-field\">\n      <button mat-button matPrefix mat-icon-button aria-label=\"Clear\" (click)=\"search=''\">\n        <mat-icon>search</mat-icon>\n      </button>\n      <input matInput type=\"text\" placeholder=\"Search\" [(ngModel)]=\"search\">\n      <button mat-button *ngIf=\"search\" matSuffix mat-icon-button aria-label=\"Clear\" (click)=\"search=''\">\n        <mat-icon>close</mat-icon>\n      </button>\n    </mat-form-field>\n  </div>\n\n  <div content>\n    <div class=\"subject-content\">\n      <mat-nav-list>\n        <div *ngFor=\"let codeSection of codeSections\">\n          <mat-divider></mat-divider>\n          <h3 matSubheader>{{codeSection.name}}</h3>\n          <a [routerLink]=\"['/codes', code.id]\" mat-list-item *ngFor=\"let code of codeSection.codes\">\n            <mat-icon matListIcon>{{getIcon(code)}}</mat-icon>\n            <span matLine>{{code.name}}</span>\n            <button mat-icon-button (click)=\"showInfo(link)\">\n              <mat-icon>info</mat-icon>\n            </button>\n          </a>\n        </div>\n      </mat-nav-list>\n    </div>\n  </div>\n</app-drawer>\n"
+
+/***/ }),
+
+/***/ "./src/app/core/pages/subject/subject.component.scss":
+/*!***********************************************************!*\
+  !*** ./src/app/core/pages/subject/subject.component.scss ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".subject-content {\n  margin: 1.5625rem; }\n\nh1 {\n  font-size: 42px;\n  font-size: 2.625rem;\n  font-weight: 900;\n  margin: 0 1.5625rem 0 0; }\n\n.search-form-field {\n  width: 200px;\n  margin-top: 1.5625rem; }\n"
+
+/***/ }),
+
+/***/ "./src/app/core/pages/subject/subject.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/core/pages/subject/subject.component.ts ***!
+  \*********************************************************/
+/*! exports provided: SubjectComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubjectComponent", function() { return SubjectComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _app_core_services_subject_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @app/core/services/subject.service */ "./src/app/core/services/subject.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SubjectComponent = /** @class */ (function () {
+    function SubjectComponent(route, subjectService) {
+        var _this = this;
+        this.route = route;
+        this.subjectService = subjectService;
+        this.codeSections = [];
+        this.subject = null;
+        this.search = '';
+        this.sub = this.route.params.subscribe(function (params) {
+            if (!params['id']) {
+                return;
+            }
+            _this.id = +params['id'];
+            _this.unsub(_this.codeSectionsSubscription);
+            _this.codeSectionsSubscription = _this.subjectService
+                .getCodes(_this.id)
+                .subscribe(function (data) {
+                console.log(data);
+                _this.codeSections = data.sections;
+                _this.subject = data.subject;
+            });
+        });
+    }
+    SubjectComponent.prototype.getIcon = function (code) {
+        switch (code.type) {
+            case 0:
+                return 'vertical_split';
+            case 1:
+                return 'subject';
+            default:
+                return 'reorder';
+        }
+    };
+    SubjectComponent.prototype.ngOnInit = function () {
+    };
+    SubjectComponent.prototype.ngOnDestroy = function () {
+        this.unsub(this.codeSectionsSubscription);
+        this.sub.unsubscribe();
+    };
+    SubjectComponent.prototype.unsub = function (sub) {
+        if (sub) {
+            sub.unsubscribe();
+        }
+    };
+    SubjectComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-subject',
+            template: __webpack_require__(/*! ./subject.component.html */ "./src/app/core/pages/subject/subject.component.html"),
+            styles: [__webpack_require__(/*! ./subject.component.scss */ "./src/app/core/pages/subject/subject.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _app_core_services_subject_service__WEBPACK_IMPORTED_MODULE_2__["SubjectService"]])
+    ], SubjectComponent);
+    return SubjectComponent;
 }());
 
 
@@ -1234,11 +1514,61 @@ var AuthGuard = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/core/services/code.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/core/services/code.service.ts ***!
+  \***********************************************/
+/*! exports provided: CodeService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CodeService", function() { return CodeService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api.service */ "./src/app/core/services/api.service.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var CodeService = /** @class */ (function () {
+    function CodeService(apiService, http) {
+        this.apiService = apiService;
+        this.http = http;
+    }
+    CodeService.prototype.getCodeInfo = function (codeId) {
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]().set('codeId', "" + codeId);
+        return this.apiService.get('/codes', params)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
+            return response.data;
+        }));
+    };
+    CodeService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], CodeService);
+    return CodeService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/core/services/index.ts":
 /*!****************************************!*\
   !*** ./src/app/core/services/index.ts ***!
   \****************************************/
-/*! exports provided: ApiService, AuthGuard, JwtService, LoggerService, ProgressBarService, UserService */
+/*! exports provided: ApiService, AuthGuard, JwtService, LoggerService, ProgressBarService, UserService, SubjectService, CodeService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1260,6 +1590,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user.service */ "./src/app/core/services/user.service.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return _user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"]; });
+
+/* harmony import */ var _subject_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./subject.service */ "./src/app/core/services/subject.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SubjectService", function() { return _subject_service__WEBPACK_IMPORTED_MODULE_6__["SubjectService"]; });
+
+/* harmony import */ var _code_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./code.service */ "./src/app/core/services/code.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CodeService", function() { return _code_service__WEBPACK_IMPORTED_MODULE_7__["CodeService"]; });
+
+
 
 
 
@@ -1407,6 +1745,108 @@ var ProgressBarService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/core/services/subject.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/core/services/subject.service.ts ***!
+  \**************************************************/
+/*! exports provided: SubjectService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubjectService", function() { return SubjectService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./api.service */ "./src/app/core/services/api.service.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var SubjectService = /** @class */ (function () {
+    function SubjectService(apiService, http) {
+        var _this = this;
+        this.apiService = apiService;
+        this.http = http;
+        this._currentSubject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](null);
+        this._subjects = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]([]);
+        this.apiService
+            .get('/subjects')
+            .subscribe(function (response) { return _this._subjects.next(response.data.subjects); }, function (err) { return console.log; });
+    }
+    Object.defineProperty(SubjectService.prototype, "currentSubjects", {
+        get: function () {
+            return this._currentSubject;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SubjectService.prototype, "currentSubject", {
+        get: function () {
+            return this._currentSubject.getValue();
+        },
+        set: function (value) {
+            this._currentSubject.next(value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SubjectService.prototype, "allSubjects", {
+        get: function () {
+            return this._subjects;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SubjectService.prototype, "allSubject", {
+        get: function () {
+            return this._subjects.getValue();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SubjectService.prototype.getCodes = function (subjectId) {
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]().set('subjectId', "" + subjectId);
+        return this.apiService.get('/subjects/codes', params)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) {
+            return response.data;
+        }));
+    };
+    SubjectService.prototype.populate = function () {
+        // If JWT detected, attempt to get & store user's info
+        // if (this.jwtService.getToken()) {
+        //   this.apiService.get('/subjects')
+        //   .subscribe(
+        //     data => this.setAuth(data.user),
+        //     err => this.purgeAuth()
+        //   );
+        // } else {
+        //   // Remove any potential remnants of previous auth states
+        //   this.purgeAuth();
+        // }
+    };
+    SubjectService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], SubjectService);
+    return SubjectService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/core/services/user.service.ts":
 /*!***********************************************!*\
   !*** ./src/app/core/services/user.service.ts ***!
@@ -1508,6 +1948,110 @@ var UserService = /** @class */ (function () {
             _jwt_service__WEBPACK_IMPORTED_MODULE_4__["JwtService"]])
     ], UserService);
     return UserService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/home/components/subject-grid/subject-grid.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/app/home/components/subject-grid/subject-grid.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-grid-list [cols]=\"columns\" [rowHeight]=\"rowHeight\" gutterSize=\"4em\">\n  <mat-grid-tile fxLayout=\"column wrap\" *ngFor=\"let subject of (subjects | async)\">\n      <mat-card appHoverClass=\"mat-elevation-z8\"\n                [ngStyle]=\"getBackground(subject.image)\"\n                fxFlex=\"1 1 auto\"\n                fxLayout=\"column nowrap\"\n                fxLayoutAlign=\"center center\"\n                [routerLink]=\"['/subjects', subject.id]\"\n                matRipple>\n        <mat-card-title><h1>{{subject.name}}</h1></mat-card-title>\n        <mat-card-subtitle><span>{{subject.shortdescription}}</span></mat-card-subtitle>\n        <!-- <img class fxFlex=\"1 1 auto\" [src]=\"subject.image\"> -->\n      </mat-card>\n  </mat-grid-tile>\n</mat-grid-list>\n"
+
+/***/ }),
+
+/***/ "./src/app/home/components/subject-grid/subject-grid.component.scss":
+/*!**************************************************************************!*\
+  !*** ./src/app/home/components/subject-grid/subject-grid.component.scss ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "mat-card {\n  padding-top: 2em;\n  padding-bottom: 2em;\n  height: 100%;\n  box-sizing: border-box;\n  cursor: default; }\n  mat-card mat-card-title {\n    text-align: center;\n    font-size: 42px;\n    font-size: 2.625rem;\n    font-weight: 900; }\n  mat-card mat-card-subtitle,\n  mat-card mat-card-title {\n    color: #fcfcfc; }\n  mat-grid-list {\n  margin: 4em; }\n  mat-grid-tile {\n  overflow: visible; }\n"
+
+/***/ }),
+
+/***/ "./src/app/home/components/subject-grid/subject-grid.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/home/components/subject-grid/subject-grid.component.ts ***!
+  \************************************************************************/
+/*! exports provided: SubjectGridComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubjectGridComponent", function() { return SubjectGridComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _app_core_services_subject_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @app/core/services/subject.service */ "./src/app/core/services/subject.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SubjectGridComponent = /** @class */ (function () {
+    function SubjectGridComponent(media, subjectService) {
+        var _this = this;
+        this.subjectService = subjectService;
+        this.columns = 4;
+        this.rowHeight = '2:1';
+        this.subjects = this.subjectService.allSubjects;
+        this.watcher = media.subscribe(function (change) {
+            if (change) {
+                if (change.mqAlias === 'xs') {
+                    _this.columns = 1;
+                    _this.rowHeight = '1.5:1';
+                }
+                else if (change.mqAlias === 'sm') {
+                    _this.columns = 2;
+                    _this.rowHeight = '1:1';
+                }
+                else if (change.mqAlias === 'md') {
+                    _this.columns = 3;
+                    _this.rowHeight = '1:1';
+                }
+                else {
+                    _this.columns = 4;
+                    _this.rowHeight = '1.5:1';
+                }
+            }
+        });
+    }
+    SubjectGridComponent.prototype.getBackground = function (image) {
+        switch (image.type) {
+            case 0:
+                return { 'background-color': "" + image.value };
+            case 1:
+                return { 'background-image': "url('" + image.value + "')" };
+        }
+    };
+    SubjectGridComponent.prototype.ngOnInit = function () {
+    };
+    SubjectGridComponent.prototype.ngOnDestroy = function () {
+        this.watcher.unsubscribe();
+    };
+    SubjectGridComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-subject-grid',
+            template: __webpack_require__(/*! ./subject-grid.component.html */ "./src/app/home/components/subject-grid/subject-grid.component.html"),
+            styles: [__webpack_require__(/*! ./subject-grid.component.scss */ "./src/app/home/components/subject-grid/subject-grid.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_angular_flex_layout__WEBPACK_IMPORTED_MODULE_1__["ObservableMedia"],
+            _app_core_services_subject_service__WEBPACK_IMPORTED_MODULE_2__["SubjectService"]])
+    ], SubjectGridComponent);
+    return SubjectGridComponent;
 }());
 
 
@@ -1625,12 +2169,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_auth_resolver_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home-auth-resolver.service */ "./src/app/home/home-auth-resolver.service.ts");
 /* harmony import */ var _app_shared__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @app/shared */ "./src/app/shared/index.ts");
 /* harmony import */ var _home_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home-routing.module */ "./src/app/home/home-routing.module.ts");
+/* harmony import */ var _components_subject_grid_subject_grid_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/subject-grid/subject-grid.component */ "./src/app/home/components/subject-grid/subject-grid.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1646,7 +2192,8 @@ var HomeModule = /** @class */ (function () {
                 _home_routing_module__WEBPACK_IMPORTED_MODULE_4__["HomeRoutingModule"],
             ],
             declarations: [
-                _home_home_component__WEBPACK_IMPORTED_MODULE_1__["HomeComponent"]
+                _home_home_component__WEBPACK_IMPORTED_MODULE_1__["HomeComponent"],
+                _components_subject_grid_subject_grid_component__WEBPACK_IMPORTED_MODULE_5__["SubjectGridComponent"],
             ],
             providers: [
                 _home_auth_resolver_service__WEBPACK_IMPORTED_MODULE_2__["HomeAuthResolver"]
@@ -1678,7 +2225,7 @@ module.exports = "h1 {\n  font-size: 56px;\n  font-weight: 300;\n  line-height: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"home-page\">\n    <!-- *appShowAuthed=\"false\" -->\n  <div class=\"banner\" >\n    <div class=\"header-headline\">\n      <h1 class=\"logo-font mat-h1\">XTest 3</h1>\n      <p>A place to improove your <i>code</i> knowledge.</p>\n      <div class=\"init\">\n        <button class=\"init-button\" mat-raised-button>Get started</button>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"container page\">\n\n  </div>\n</div>"
+module.exports = "<div class=\"home-page\">\n    <!-- *appShowAuthed=\"false\" -->\n  <div class=\"banner\" >\n    <div class=\"header-headline\">\n      <h1 class=\"logo-font mat-h1\">XTest 3</h1>\n      <p>A place to improove your <i>code</i> knowledge.</p>\n      <div class=\"init\">\n        <button class=\"init-button\" mat-raised-button>Get started</button>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"container page\">\n    <app-subject-grid></app-subject-grid>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1728,6 +2275,82 @@ var HomeComponent = /** @class */ (function () {
             _core__WEBPACK_IMPORTED_MODULE_2__["UserService"]])
     ], HomeComponent);
     return HomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/drawer/drawer.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/shared/components/drawer/drawer.component.css ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ":host {\n  display: contents;\n}\n\nmat-sidenav {\n  width: 250px;\n}\n\n.container {\n  -ms-flex: 1 1 auto;\n      flex: 1 1 auto;\n}\n\n.sidenav-sticky {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/drawer/drawer.component.html":
+/*!****************************************************************!*\
+  !*** ./src/app/shared/components/drawer/drawer.component.html ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-toolbar color=\"primary\">\n  <mat-toolbar-row>\n    <button (click)=\"sidenav.toggle()\" mat-icon-button>\n      <mat-icon>{{opened ? 'arrow_back_ios' : 'arrow_forward_ios'}}</mat-icon>\n    </button>\n    <ng-content select=\"[header]\"></ng-content>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<mat-sidenav-container class=\"container\" fxLayout=\"row\">\n  <mat-sidenav #sidenav [mode]=\"over\" [(opened)]=\"opened\" [fixedInViewport]=\"false\" [fixedTopGap]=\"0\" [fixedBottomGap]=\"0\"\n    fxFlex=\"0 0 auto\" role=\"navigation\" (scroll)=\"checkSidebarScroll(this)\">\n    <div class=\"sidenav-sticky\" [ngStyle]=\"{'margin-top': sidebarOffsetTop + 'px'}\">\n      <ng-content select=\"[sidenav]\"></ng-content>\n    </div>\n  </mat-sidenav>\n\n  <mat-sidenav-content fxFlex=\"1 1 auto\">\n    <ng-content select=\"[content]\"></ng-content>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/drawer/drawer.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/shared/components/drawer/drawer.component.ts ***!
+  \**************************************************************/
+/*! exports provided: DrawerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawerComponent", function() { return DrawerComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/flex-layout/core */ "./node_modules/@angular/flex-layout/esm5/core.es5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DrawerComponent = /** @class */ (function () {
+    function DrawerComponent(media) {
+        var _this = this;
+        this.opened = true;
+        this.over = 'side';
+        this.watcher = media.subscribe(function (change) {
+            if (change.mqAlias === 'sm' || change.mqAlias === 'xs') {
+                _this.opened = false;
+                _this.over = 'over';
+            }
+            else {
+                _this.opened = true;
+                _this.over = 'side';
+            }
+        });
+    }
+    DrawerComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-drawer',
+            template: __webpack_require__(/*! ./drawer.component.html */ "./src/app/shared/components/drawer/drawer.component.html"),
+            styles: [__webpack_require__(/*! ./drawer.component.css */ "./src/app/shared/components/drawer/drawer.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__["ObservableMedia"]])
+    ], DrawerComponent);
+    return DrawerComponent;
 }());
 
 
@@ -1820,7 +2443,7 @@ var ListErrorsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "search bar\n"
+module.exports = "<mat-form-field color=\"accent\" class=\"search-form-field\">\n  <button mat-button matPrefix mat-icon-button aria-label=\"Clear\" (click)=\"search=''\">\n    <mat-icon>search</mat-icon>\n  </button>\n  <input matInput type=\"text\" [placeholder]=\"'search' | translate\" [(ngModel)]=\"search\">\n  <button mat-button *ngIf=\"search\" matSuffix mat-icon-button aria-label=\"Clear\" (click)=\"search=''\">\n    <mat-icon>close</mat-icon>\n  </button>\n</mat-form-field>"
 
 /***/ }),
 
@@ -1831,7 +2454,7 @@ module.exports = "search bar\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "mat-form-field {\n  color: #fff; }\n"
 
 /***/ }),
 
@@ -1863,6 +2486,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var SearchBarComponent = /** @class */ (function () {
     function SearchBarComponent(router) {
         this.router = router;
+        this.search = '';
     }
     SearchBarComponent.prototype.ngOnInit = function () {
     };
@@ -1941,6 +2565,66 @@ var SpinnerComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], SpinnerComponent);
     return SpinnerComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/directives/hover-class.directive.ts":
+/*!************************************************************!*\
+  !*** ./src/app/shared/directives/hover-class.directive.ts ***!
+  \************************************************************/
+/*! exports provided: HoverClassDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HoverClassDirective", function() { return HoverClassDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var HoverClassDirective = /** @class */ (function () {
+    function HoverClassDirective(elementRef, renderer) {
+        this.elementRef = elementRef;
+        this.renderer = renderer;
+    }
+    HoverClassDirective.prototype.mouseover = function () {
+        this.renderer.setElementClass(this.elementRef.nativeElement, this.appHoverClass, true);
+    };
+    HoverClassDirective.prototype.mouseout = function () {
+        this.renderer.setElementClass(this.elementRef.nativeElement, this.appHoverClass, false);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], HoverClassDirective.prototype, "appHoverClass", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('mouseover'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], HoverClassDirective.prototype, "mouseover", null);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('mouseout'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], HoverClassDirective.prototype, "mouseout", null);
+    HoverClassDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({ selector: '[appHoverClass]' }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer"]])
+    ], HoverClassDirective);
+    return HoverClassDirective;
 }());
 
 
@@ -2124,7 +2808,7 @@ module.exports = "<footer>\n    <div fxFlex fxLayout=\"row\" fxLayout.xs=\"colum
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "footer {\n  padding: 0.5rem 1rem;\n  color: #ffffff;\n  background: #3f51b5;\n  position: -webkit-sticky;\n  position: sticky;\n  top: 100%; }\n  footer img {\n    width: 25%; }\n  .footer-xs {\n  text-align: center;\n  padding-top: 1rem; }\n"
+module.exports = "footer {\n  padding: 0.75rem;\n  color: #ffffff;\n  background: #3f51b5;\n  position: -webkit-sticky;\n  position: sticky;\n  font-size: 12px;\n  font-size: 0.75rem;\n  margin-top: 2.5rem; }\n  footer img {\n    width: 25%; }\n  .footer-xs {\n  text-align: center;\n  padding-top: 1rem; }\n"
 
 /***/ }),
 
@@ -2330,6 +3014,7 @@ var MaterialModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatButtonToggleModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatMenuModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatIconModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatCardModule"],
@@ -2350,10 +3035,13 @@ var MaterialModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatNativeDateModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatTreeModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatSidenavModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatToolbarModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatToolbarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatChipsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatRippleModule"],
             ],
             exports: [
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatButtonToggleModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatMenuModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatIconModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatCardModule"],
@@ -2374,7 +3062,9 @@ var MaterialModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatNativeDateModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatTreeModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatSidenavModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatToolbarModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatToolbarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatChipsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_0__["MatRippleModule"],
             ],
         })
     ], MaterialModule);
@@ -2395,23 +3085,25 @@ var MaterialModule = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SharedModule", function() { return SharedModule; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _components_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/spinner/spinner.component */ "./src/app/shared/components/spinner/spinner.component.ts");
-/* harmony import */ var _components_list_errors_list_errors_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/list-errors/list-errors.component */ "./src/app/shared/components/list-errors/list-errors.component.ts");
-/* harmony import */ var _directives_show_authed_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./directives/show-authed.directive */ "./src/app/shared/directives/show-authed.directive.ts");
-/* harmony import */ var _components_search_bar_search_bar_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/search-bar/search-bar.component */ "./src/app/shared/components/search-bar/search-bar.component.ts");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _modules_material_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/material.module */ "./src/app/shared/modules/material.module.ts");
-/* harmony import */ var _ui__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ui */ "./src/app/shared/ui/index.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _components_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/drawer/drawer.component */ "./src/app/shared/components/drawer/drawer.component.ts");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _directives_hover_class_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./directives/hover-class.directive */ "./src/app/shared/directives/hover-class.directive.ts");
+/* harmony import */ var _components_list_errors_list_errors_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/list-errors/list-errors.component */ "./src/app/shared/components/list-errors/list-errors.component.ts");
+/* harmony import */ var _modules_material_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/material.module */ "./src/app/shared/modules/material.module.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _components_search_bar_search_bar_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/search-bar/search-bar.component */ "./src/app/shared/components/search-bar/search-bar.component.ts");
+/* harmony import */ var _directives_show_authed_directive__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./directives/show-authed.directive */ "./src/app/shared/directives/show-authed.directive.ts");
+/* harmony import */ var _components_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/spinner/spinner.component */ "./src/app/shared/components/spinner/spinner.component.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -2427,34 +3119,36 @@ var SharedModule = /** @class */ (function () {
     function SharedModule() {
     }
     SharedModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_7__["NgModule"])({
             imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_1__["FlexLayoutModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
-                _modules_material_module__WEBPACK_IMPORTED_MODULE_9__["MaterialModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateModule"].forChild(),
+                _angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__["FlexLayoutModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+                _modules_material_module__WEBPACK_IMPORTED_MODULE_6__["MaterialModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_11__["TranslateModule"].forChild(),
             ],
             declarations: [
-                _ui__WEBPACK_IMPORTED_MODULE_10__["DrawerComponent"],
-                _components_list_errors_list_errors_component__WEBPACK_IMPORTED_MODULE_4__["ListErrorsComponent"],
-                _components_search_bar_search_bar_component__WEBPACK_IMPORTED_MODULE_6__["SearchBarComponent"],
-                _directives_show_authed_directive__WEBPACK_IMPORTED_MODULE_5__["ShowAuthedDirective"],
-                _components_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_3__["SpinnerComponent"],
+                _components_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_1__["DrawerComponent"],
+                _directives_hover_class_directive__WEBPACK_IMPORTED_MODULE_4__["HoverClassDirective"],
+                _components_list_errors_list_errors_component__WEBPACK_IMPORTED_MODULE_5__["ListErrorsComponent"],
+                _components_search_bar_search_bar_component__WEBPACK_IMPORTED_MODULE_8__["SearchBarComponent"],
+                _directives_show_authed_directive__WEBPACK_IMPORTED_MODULE_9__["ShowAuthedDirective"],
+                _components_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_10__["SpinnerComponent"],
             ],
             exports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _ui__WEBPACK_IMPORTED_MODULE_10__["DrawerComponent"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_1__["FlexLayoutModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
-                _components_list_errors_list_errors_component__WEBPACK_IMPORTED_MODULE_4__["ListErrorsComponent"],
-                _modules_material_module__WEBPACK_IMPORTED_MODULE_9__["MaterialModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"],
-                _components_search_bar_search_bar_component__WEBPACK_IMPORTED_MODULE_6__["SearchBarComponent"],
-                _directives_show_authed_directive__WEBPACK_IMPORTED_MODULE_5__["ShowAuthedDirective"],
-                _components_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_3__["SpinnerComponent"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateModule"],
+                _angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
+                _components_drawer_drawer_component__WEBPACK_IMPORTED_MODULE_1__["DrawerComponent"],
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__["FlexLayoutModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+                _directives_hover_class_directive__WEBPACK_IMPORTED_MODULE_4__["HoverClassDirective"],
+                _components_list_errors_list_errors_component__WEBPACK_IMPORTED_MODULE_5__["ListErrorsComponent"],
+                _modules_material_module__WEBPACK_IMPORTED_MODULE_6__["MaterialModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
+                _components_search_bar_search_bar_component__WEBPACK_IMPORTED_MODULE_8__["SearchBarComponent"],
+                _directives_show_authed_directive__WEBPACK_IMPORTED_MODULE_9__["ShowAuthedDirective"],
+                _components_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_10__["SpinnerComponent"],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_11__["TranslateModule"],
             ]
         })
     ], SharedModule);
@@ -2465,40 +3159,40 @@ var SharedModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/shared/ui/drawer/drawer.component.css":
-/*!*******************************************************!*\
-  !*** ./src/app/shared/ui/drawer/drawer.component.css ***!
-  \*******************************************************/
+/***/ "./src/app/ui/dynamic-template/dynamic-template-loader/dynamic-template-loader.component.css":
+/*!***************************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template-loader/dynamic-template-loader.component.css ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: contents;\n}\n\nmat-sidenav {\n  width: 250px;\n}\n\n.container {\n  -ms-flex: 1 1 auto;\n      flex: 1 1 auto;\n}\n\n.sidenav-sticky {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n}\n"
+module.exports = ""
 
 /***/ }),
 
-/***/ "./src/app/shared/ui/drawer/drawer.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/shared/ui/drawer/drawer.component.html ***!
-  \********************************************************/
+/***/ "./src/app/ui/dynamic-template/dynamic-template-loader/dynamic-template-loader.component.html":
+/*!****************************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template-loader/dynamic-template-loader.component.html ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\n  <mat-toolbar-row>\n    <button (click)=\"sidenav.toggle()\" mat-icon-button>\n      <mat-icon>{{opened ? 'arrow_back_ios' : 'arrow_forward_ios'}}</mat-icon>\n    </button>\n    <ng-content select=\"[header]\"></ng-content>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<mat-sidenav-container class=\"container\" fxLayout=\"row\">\n  <mat-sidenav #sidenav [mode]=\"over\" [(opened)]=\"opened\" [fixedInViewport]=\"false\" [fixedTopGap]=\"0\" [fixedBottomGap]=\"0\"\n    fxFlex=\"0 0 auto\" role=\"navigation\" (scroll)=\"checkSidebarScroll(this)\">\n    <div class=\"sidenav-sticky\" [ngStyle]=\"{'margin-top': sidebarOffsetTop + 'px'}\">\n      <ng-content select=\"[sidenav]\"></ng-content>\n    </div>\n  </mat-sidenav>\n\n  <mat-sidenav-content fxFlex=\"1 1 auto\">\n    <ng-content select=\"[content]\"></ng-content>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
+module.exports = "<div>\n  <app-dynamic-template [dt]=\"dt\"></app-dynamic-template>\n</div>\n"
 
 /***/ }),
 
-/***/ "./src/app/shared/ui/drawer/drawer.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/shared/ui/drawer/drawer.component.ts ***!
-  \******************************************************/
-/*! exports provided: DrawerComponent */
+/***/ "./src/app/ui/dynamic-template/dynamic-template-loader/dynamic-template-loader.component.ts":
+/*!**************************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template-loader/dynamic-template-loader.component.ts ***!
+  \**************************************************************************************************/
+/*! exports provided: DynamicTemplateLoaderComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawerComponent", function() { return DrawerComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DynamicTemplateLoaderComponent", function() { return DynamicTemplateLoaderComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/flex-layout/core */ "./node_modules/@angular/flex-layout/esm5/core.es5.js");
+/* harmony import */ var _shared_dt_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/dt.service */ "./src/app/ui/dynamic-template/shared/dt.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2510,49 +3204,472 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-var DrawerComponent = /** @class */ (function () {
-    function DrawerComponent(media) {
-        var _this = this;
-        this.opened = true;
-        this.over = 'side';
-        this.watcher = media.subscribe(function (change) {
-            if (change.mqAlias === 'sm' || change.mqAlias === 'xs') {
-                _this.opened = false;
-                _this.over = 'over';
-            }
-            else {
-                _this.opened = true;
-                _this.over = 'side';
-            }
-        });
+var DynamicTemplateLoaderComponent = /** @class */ (function () {
+    function DynamicTemplateLoaderComponent(dtService) {
+        this.dtService = dtService;
     }
-    DrawerComponent = __decorate([
+    DynamicTemplateLoaderComponent.prototype.ngOnInit = function () {
+        this.dt = {
+            component: null,
+            data: {
+                template: this.template,
+            },
+        };
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], DynamicTemplateLoaderComponent.prototype, "template", void 0);
+    DynamicTemplateLoaderComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-drawer',
-            template: __webpack_require__(/*! ./drawer.component.html */ "./src/app/shared/ui/drawer/drawer.component.html"),
-            styles: [__webpack_require__(/*! ./drawer.component.css */ "./src/app/shared/ui/drawer/drawer.component.css")]
+            selector: 'app-dynamic-template-loader',
+            template: __webpack_require__(/*! ./dynamic-template-loader.component.html */ "./src/app/ui/dynamic-template/dynamic-template-loader/dynamic-template-loader.component.html"),
+            styles: [__webpack_require__(/*! ./dynamic-template-loader.component.css */ "./src/app/ui/dynamic-template/dynamic-template-loader/dynamic-template-loader.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_flex_layout_core__WEBPACK_IMPORTED_MODULE_1__["ObservableMedia"]])
-    ], DrawerComponent);
-    return DrawerComponent;
+        __metadata("design:paramtypes", [_shared_dt_service__WEBPACK_IMPORTED_MODULE_1__["DtService"]])
+    ], DynamicTemplateLoaderComponent);
+    return DynamicTemplateLoaderComponent;
 }());
 
 
 
 /***/ }),
 
-/***/ "./src/app/shared/ui/index.ts":
-/*!************************************!*\
-  !*** ./src/app/shared/ui/index.ts ***!
-  \************************************/
-/*! exports provided: DrawerComponent */
+/***/ "./src/app/ui/dynamic-template/dynamic-template.module.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template.module.ts ***!
+  \****************************************************************/
+/*! exports provided: DynamicTemplateModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _drawer_drawer_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./drawer/drawer.component */ "./src/app/shared/ui/drawer/drawer.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DrawerComponent", function() { return _drawer_drawer_component__WEBPACK_IMPORTED_MODULE_0__["DrawerComponent"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DynamicTemplateModule", function() { return DynamicTemplateModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _dynamic_template_dynamic_template_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dynamic-template/dynamic-template.component */ "./src/app/ui/dynamic-template/dynamic-template/dynamic-template.component.ts");
+/* harmony import */ var _dynamic_template_loader_dynamic_template_loader_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dynamic-template-loader/dynamic-template-loader.component */ "./src/app/ui/dynamic-template/dynamic-template-loader/dynamic-template-loader.component.ts");
+/* harmony import */ var _shared_dt_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./shared/dt.service */ "./src/app/ui/dynamic-template/shared/dt.service.ts");
+/* harmony import */ var _shared_dt_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shared/dt.directive */ "./src/app/ui/dynamic-template/shared/dt.directive.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 
+
+
+
+
+
+var DynamicTemplateModule = /** @class */ (function () {
+    function DynamicTemplateModule() {
+    }
+    DynamicTemplateModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]
+            ],
+            providers: [_shared_dt_service__WEBPACK_IMPORTED_MODULE_4__["DtService"]],
+            declarations: [_shared_dt_directive__WEBPACK_IMPORTED_MODULE_5__["DtDirective"], _dynamic_template_dynamic_template_component__WEBPACK_IMPORTED_MODULE_2__["DynamicTemplateComponent"], _dynamic_template_loader_dynamic_template_loader_component__WEBPACK_IMPORTED_MODULE_3__["DynamicTemplateLoaderComponent"]],
+            exports: [_dynamic_template_loader_dynamic_template_loader_component__WEBPACK_IMPORTED_MODULE_3__["DynamicTemplateLoaderComponent"]],
+        })
+    ], DynamicTemplateModule);
+    return DynamicTemplateModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/dynamic-template/components/dynamic-template-components.module.ts":
+/*!*******************************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template/components/dynamic-template-components.module.ts ***!
+  \*******************************************************************************************************/
+/*! exports provided: DynamicTemplateComponentsModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DynamicTemplateComponentsModule", function() { return DynamicTemplateComponentsModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _xtest_paragraph_xtest_paragraph_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./xtest-paragraph/xtest-paragraph.component */ "./src/app/ui/dynamic-template/dynamic-template/components/xtest-paragraph/xtest-paragraph.component.ts");
+/* harmony import */ var _xtest_container_xtest_container_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./xtest-container/xtest-container.component */ "./src/app/ui/dynamic-template/dynamic-template/components/xtest-container/xtest-container.component.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var DynamicTemplateComponentsModule = /** @class */ (function () {
+    function DynamicTemplateComponentsModule() {
+    }
+    DynamicTemplateComponentsModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]
+            ],
+            declarations: [_xtest_paragraph_xtest_paragraph_component__WEBPACK_IMPORTED_MODULE_2__["XtestParagraphComponent"], _xtest_container_xtest_container_component__WEBPACK_IMPORTED_MODULE_3__["XtestContainerComponent"]],
+            exports: [_xtest_paragraph_xtest_paragraph_component__WEBPACK_IMPORTED_MODULE_2__["XtestParagraphComponent"], _xtest_container_xtest_container_component__WEBPACK_IMPORTED_MODULE_3__["XtestContainerComponent"]],
+        })
+    ], DynamicTemplateComponentsModule);
+    return DynamicTemplateComponentsModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/dynamic-template/components/xtest-container/xtest-container.component.css":
+/*!***************************************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template/components/xtest-container/xtest-container.component.css ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".container {\n  padding: 25px 0;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/dynamic-template/components/xtest-container/xtest-container.component.html":
+/*!****************************************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template/components/xtest-container/xtest-container.component.html ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <ng-content></ng-content>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/dynamic-template/components/xtest-container/xtest-container.component.ts":
+/*!**************************************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template/components/xtest-container/xtest-container.component.ts ***!
+  \**************************************************************************************************************/
+/*! exports provided: XtestContainerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XtestContainerComponent", function() { return XtestContainerComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var XtestContainerComponent = /** @class */ (function () {
+    function XtestContainerComponent() {
+    }
+    XtestContainerComponent.prototype.ngOnInit = function () {
+    };
+    XtestContainerComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'xtest-container',
+            template: __webpack_require__(/*! ./xtest-container.component.html */ "./src/app/ui/dynamic-template/dynamic-template/components/xtest-container/xtest-container.component.html"),
+            styles: [__webpack_require__(/*! ./xtest-container.component.css */ "./src/app/ui/dynamic-template/dynamic-template/components/xtest-container/xtest-container.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], XtestContainerComponent);
+    return XtestContainerComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/dynamic-template/components/xtest-paragraph/xtest-paragraph.component.css":
+/*!***************************************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template/components/xtest-paragraph/xtest-paragraph.component.css ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".paragraph {\n  display: block;\n  margin-top: 15px;\n  padding: 15px;\n  border-top: 1px solid #eee;\n}"
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/dynamic-template/components/xtest-paragraph/xtest-paragraph.component.html":
+/*!****************************************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template/components/xtest-paragraph/xtest-paragraph.component.html ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p class=\"paragraph\">\n  <ng-content></ng-content>\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/dynamic-template/components/xtest-paragraph/xtest-paragraph.component.ts":
+/*!**************************************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template/components/xtest-paragraph/xtest-paragraph.component.ts ***!
+  \**************************************************************************************************************/
+/*! exports provided: XtestParagraphComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XtestParagraphComponent", function() { return XtestParagraphComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var XtestParagraphComponent = /** @class */ (function () {
+    function XtestParagraphComponent() {
+    }
+    XtestParagraphComponent.prototype.ngOnInit = function () {
+    };
+    XtestParagraphComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'xtest-paragraph',
+            template: __webpack_require__(/*! ./xtest-paragraph.component.html */ "./src/app/ui/dynamic-template/dynamic-template/components/xtest-paragraph/xtest-paragraph.component.html"),
+            styles: [__webpack_require__(/*! ./xtest-paragraph.component.css */ "./src/app/ui/dynamic-template/dynamic-template/components/xtest-paragraph/xtest-paragraph.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], XtestParagraphComponent);
+    return XtestParagraphComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/dynamic-template/dynamic-template.component.css":
+/*!*************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template/dynamic-template.component.css ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/dynamic-template/dynamic-template.component.html":
+/*!**************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template/dynamic-template.component.html ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"dt-host\">\n  <ng-template appDtHost></ng-template>\n  <div #container></div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/dynamic-template/dynamic-template.component.ts":
+/*!************************************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/dynamic-template/dynamic-template.component.ts ***!
+  \************************************************************************************/
+/*! exports provided: DynamicTemplateComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DynamicTemplateComponent", function() { return DynamicTemplateComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _shared_dt_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/dt.directive */ "./src/app/ui/dynamic-template/shared/dt.directive.ts");
+/* harmony import */ var _shared_dt_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/dt-item */ "./src/app/ui/dynamic-template/shared/dt-item.ts");
+/* harmony import */ var _components_dynamic_template_components_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/dynamic-template-components.module */ "./src/app/ui/dynamic-template/dynamic-template/components/dynamic-template-components.module.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var DynamicTemplateComponent = /** @class */ (function () {
+    function DynamicTemplateComponent(componentFactoryResolver, compiler) {
+        this.componentFactoryResolver = componentFactoryResolver;
+        this.compiler = compiler;
+        this.module = null;
+    }
+    DynamicTemplateComponent.prototype.compileTemplate = function () {
+        var metadata = {
+            selector: "runtime-component-sample",
+            template: this.dt.data.template
+        };
+        var factory = this.createComponentFactorySync(this.compiler, metadata, null);
+        if (this.componentRef) {
+            this.componentRef.destroy();
+            this.componentRef = null;
+        }
+        this.componentRef = this.container.createComponent(factory);
+    };
+    DynamicTemplateComponent.prototype.createComponentFactorySync = function (compiler, metadata, componentClass) {
+        var cmpClass = componentClass || /** @class */ (function () {
+            function RuntimeComponent() {
+                this.name = 'Meelistenso';
+            }
+            return RuntimeComponent;
+        }());
+        var decoratedCmp = Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])(metadata)(cmpClass);
+        if (!this.module) {
+            var RuntimeComponentModule = /** @class */ (function () {
+                function RuntimeComponentModule() {
+                }
+                RuntimeComponentModule = __decorate([
+                    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+                        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _components_dynamic_template_components_module__WEBPACK_IMPORTED_MODULE_4__["DynamicTemplateComponentsModule"]],
+                        declarations: [
+                            decoratedCmp
+                        ]
+                    })
+                ], RuntimeComponentModule);
+                return RuntimeComponentModule;
+            }());
+            this.module = compiler.compileModuleAndAllComponentsSync(RuntimeComponentModule);
+        }
+        return this.module.componentFactories.find(function (f) { return f.componentType === decoratedCmp; });
+    };
+    DynamicTemplateComponent.prototype.ngOnDestroy = function () {
+        // if (this.componentRef) {
+        //   this.componentRef.destroy();
+        // }
+    };
+    DynamicTemplateComponent.prototype.ngOnInit = function () {
+        // this.loadComponent();
+        this.compileTemplate();
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", _shared_dt_item__WEBPACK_IMPORTED_MODULE_3__["DtItem"])
+    ], DynamicTemplateComponent.prototype, "dt", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_shared_dt_directive__WEBPACK_IMPORTED_MODULE_2__["DtDirective"]),
+        __metadata("design:type", _shared_dt_directive__WEBPACK_IMPORTED_MODULE_2__["DtDirective"])
+    ], DynamicTemplateComponent.prototype, "appDtHost", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('container', { read: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewContainerRef"] }),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewContainerRef"])
+    ], DynamicTemplateComponent.prototype, "container", void 0);
+    DynamicTemplateComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-dynamic-template',
+            template: __webpack_require__(/*! ./dynamic-template.component.html */ "./src/app/ui/dynamic-template/dynamic-template/dynamic-template.component.html"),
+            styles: [__webpack_require__(/*! ./dynamic-template.component.css */ "./src/app/ui/dynamic-template/dynamic-template/dynamic-template.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"]])
+    ], DynamicTemplateComponent);
+    return DynamicTemplateComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/shared/dt-item.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/ui/dynamic-template/shared/dt-item.ts ***!
+  \*******************************************************/
+/*! exports provided: DtItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DtItem", function() { return DtItem; });
+var DtItem = /** @class */ (function () {
+    function DtItem(component, data) {
+        this.component = component;
+        this.data = data;
+    }
+    return DtItem;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/shared/dt.directive.ts":
+/*!************************************************************!*\
+  !*** ./src/app/ui/dynamic-template/shared/dt.directive.ts ***!
+  \************************************************************/
+/*! exports provided: DtDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DtDirective", function() { return DtDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DtDirective = /** @class */ (function () {
+    function DtDirective(viewContainerRef) {
+        this.viewContainerRef = viewContainerRef;
+    }
+    DtDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[appDtHost]'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewContainerRef"]])
+    ], DtDirective);
+    return DtDirective;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/ui/dynamic-template/shared/dt.service.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/ui/dynamic-template/shared/dt.service.ts ***!
+  \**********************************************************/
+/*! exports provided: DtService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DtService", function() { return DtService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var DtService = /** @class */ (function () {
+    function DtService() {
+    }
+    DtService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()
+    ], DtService);
+    return DtService;
+}());
 
 
 
@@ -2629,10 +3746,10 @@ module.exports = webpackAsyncContext;
 /*!*********************************!*\
   !*** ./src/assets/i18n/en.json ***!
   \*********************************/
-/*! exports provided: alert, app-name, areYouSure, back, canVote, cancel, cannotVote, create, createHero, createNewHero, cyan, details, error404, errorHasOcurred, findHero, firstTwoHeroesById, goBack, hero-create-new, hero-top, heroCreated, heroDefault, heroDetail, heroDuplicated, heroLikeMaximum, heroPower, heroRemoved, heroesList, language, mayTheForce, name, nameRequired, no, noHero, offlineMessage, orange, realName, realNameRequired, remove, removeHero, saveHero, saved, snapshot, sureRemoveHero, topHeroes, updateBrowser, yellow, yes, home, login, register, passwordNotSame, confirmPassword, invalidPassword, invalidEmail, password, email, submit, firstName, lastName, default */
+/*! exports provided: alert, app-name, areYouSure, back, canVote, cancel, cannotVote, create, createHero, createNewHero, cyan, details, error404, errorHasOcurred, findHero, firstTwoHeroesById, goBack, hero-create-new, hero-top, heroCreated, heroDefault, heroDetail, heroDuplicated, heroLikeMaximum, heroPower, heroRemoved, heroesList, language, mayTheForce, name, nameRequired, no, noHero, offlineMessage, orange, realName, realNameRequired, remove, removeHero, saveHero, saved, snapshot, sureRemoveHero, topHeroes, updateBrowser, yellow, yes, home, login, register, passwordNotSame, confirmPassword, invalidPassword, invalidEmail, password, email, submit, firstName, lastName, search, default */
 /***/ (function(module) {
 
-module.exports = {"alert":"Alert","app-name":"XTest 3","areYouSure":"Are you sure?","back":"Back","canVote":"Can vote :)","cancel":"Cancel","cannotVote":"Cannot vote anymore :(","create":"Create","createHero":"Create a hero","createNewHero":"Create new hero","cyan":"Cyan","details":"details","error404":"404 Error","errorHasOcurred":"An error has ocurred","findHero":"Look for a hero","firstTwoHeroesById":"Heroes (1-2)","goBack":"Go back","hero-create-new":{"newHero":"New hero"},"hero-top":{"title":"Top Heroes"},"heroCreated":"Hero created!","heroDefault":"It's a default hero, you cannot delete it","heroDetail":"Hero detail","heroDuplicated":"Hero id is already taken","heroLikeMaximum":"The limit of votes is {{value}}!","heroPower":"Hero power","heroRemoved":"Hero has gone :(","heroesList":"Heroes list","language":"Language","mayTheForce":"May the force be with you","name":"Name","nameRequired":"Name is required","no":"No","noHero":"There is no hero!","offlineMessage":"Without connection we can not load anything!","orange":"Orange","realName":"Real name","realNameRequired":"Real name is required","remove":"Remove","removeHero":"Delete hero","saveHero":"Save hero","saved":"Saved!","snapshot":"Snapshot","sureRemoveHero":"Do you want to remove the hero?","topHeroes":"Heroes most liked","updateBrowser":"You are using an old browser, please update it and reload the page.","yellow":"Yellow","yes":"Yes","home":"Home","login":"Login","register":"Register","passwordNotSame":"Passwords not same","confirmPassword":"Confirm password","invalidPassword":"Please enter proper password","invalidEmail":"Enter proper Email!","password":"Password","email":"Email","submit":"Submit","firstName":"First Name","lastName":"Last Name"};
+module.exports = {"alert":"Alert","app-name":"XTest 3","areYouSure":"Are you sure?","back":"Back","canVote":"Can vote :)","cancel":"Cancel","cannotVote":"Cannot vote anymore :(","create":"Create","createHero":"Create a hero","createNewHero":"Create new hero","cyan":"Cyan","details":"details","error404":"404 Error","errorHasOcurred":"An error has ocurred","findHero":"Look for a hero","firstTwoHeroesById":"Heroes (1-2)","goBack":"Go back","hero-create-new":{"newHero":"New hero"},"hero-top":{"title":"Top Heroes"},"heroCreated":"Hero created!","heroDefault":"It's a default hero, you cannot delete it","heroDetail":"Hero detail","heroDuplicated":"Hero id is already taken","heroLikeMaximum":"The limit of votes is {{value}}!","heroPower":"Hero power","heroRemoved":"Hero has gone :(","heroesList":"Heroes list","language":"Language","mayTheForce":"May the force be with you","name":"Name","nameRequired":"Name is required","no":"No","noHero":"There is no hero!","offlineMessage":"Without connection we can not load anything!","orange":"Orange","realName":"Real name","realNameRequired":"Real name is required","remove":"Remove","removeHero":"Delete hero","saveHero":"Save hero","saved":"Saved!","snapshot":"Snapshot","sureRemoveHero":"Do you want to remove the hero?","topHeroes":"Heroes most liked","updateBrowser":"You are using an old browser, please update it and reload the page.","yellow":"Yellow","yes":"Yes","home":"Home","login":"Login","register":"Register","passwordNotSame":"Passwords not same","confirmPassword":"Confirm password","invalidPassword":"Please enter proper password","invalidEmail":"Enter proper Email!","password":"Password","email":"Email","submit":"Submit","firstName":"First Name","lastName":"Last Name","search":"Search"};
 
 /***/ }),
 
