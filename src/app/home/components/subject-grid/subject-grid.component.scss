@@ -1,0 +1,28 @@
+@import "mixins";
+
+mat-card {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  height: 100%;
+  box-sizing: border-box;
+  cursor: default;
+
+  mat-card-title {
+    text-align: center;
+    @include font-size(42px);
+    font-weight: 900;
+  }
+
+  mat-card-subtitle,
+  mat-card-title {
+    color: #fcfcfc;
+  }
+}
+
+mat-grid-list {
+  margin: 4em;
+}
+
+mat-grid-tile {
+  overflow: visible;
+}

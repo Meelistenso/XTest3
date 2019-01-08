@@ -4,3 +4,5 @@ export * from './jwt.service';
 export * from './logger.service';
 export * from './progress-bar.service';
 export * from './user.service';
+export * from './subject.service';
+export * from './code.service';

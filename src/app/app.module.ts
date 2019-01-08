@@ -17,6 +17,9 @@ import { AuthModule } from './auth/auth.module';
 import { FooterComponent, HeaderComponent, SharedModule } from './shared';
 import { WebpackTranslateLoader } from './webpack-translate-loader';
 import { Error404Component } from '@app/core/pages/error404/error404.component';
+import { SubjectComponent } from '@app/core/pages/subject/subject.component';
+import { CodeInfoComponent } from '@app/core/pages/code-info/code-info.component';
+import { DynamicTemplateModule } from '@app/ui/dynamic-template/dynamic-template.module';
 
 @NgModule({
   imports: [
@@ -37,12 +40,15 @@ import { Error404Component } from '@app/core/pages/error404/error404.component';
     AppRoutingModule,
     HomeModule,
     SharedModule,
+    DynamicTemplateModule,
   ],
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
     Error404Component,
+    SubjectComponent,
+    CodeInfoComponent
   ],
   providers: [
     { provide: APP_CONFIG, useValue: AppConfig },

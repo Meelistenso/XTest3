@@ -1,0 +1,15 @@
+<mat-grid-list [cols]="columns" [rowHeight]="rowHeight" gutterSize="4em">
+  <mat-grid-tile fxLayout="column wrap" *ngFor="let subject of (subjects | async)">
+      <mat-card appHoverClass="mat-elevation-z8"
+                [ngStyle]="getBackground(subject.image)"
+                fxFlex="1 1 auto"
+                fxLayout="column nowrap"
+                fxLayoutAlign="center center"
+                [routerLink]="['/subjects', subject.id]"
+                matRipple>
+        <mat-card-title><h1>{{subject.name}}</h1></mat-card-title>
+        <mat-card-subtitle><span>{{subject.shortdescription}}</span></mat-card-subtitle>
+        <!-- <img class fxFlex="1 1 auto" [src]="subject.image"> -->
+      </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

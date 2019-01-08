@@ -1,0 +1,16 @@
+@import "mixins";
+
+.code-info {
+  max-width: 800px;
+  margin: calculateRem(25px) auto;
+}
+
+h1 {
+  @include font-size(42px);
+  font-weight: 900;
+  margin: 0 calculateRem(25px) 0 0;
+}
+
+a {
+  margin-right: 25px;
+}

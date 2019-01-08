@@ -1,0 +1,36 @@
+<app-drawer>
+  <div header fxLayout="row wrap" fxLayoutAlign="start center">
+      <h1>{{ subject?.name }}</h1>
+      <h4>{{ subject?.shortdescription}}</h4>
+  </div>
+
+  <div sidenav fxLayout="row" fxLayoutAlign="center start">
+    <mat-form-field class="search-form-field">
+      <button mat-button matPrefix mat-icon-button aria-label="Clear" (click)="search=''">
+        <mat-icon>search</mat-icon>
+      </button>
+      <input matInput type="text" placeholder="Search" [(ngModel)]="search">
+      <button mat-button *ngIf="search" matSuffix mat-icon-button aria-label="Clear" (click)="search=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div content>
+    <div class="subject-content">
+      <mat-nav-list>
+        <div *ngFor="let codeSection of codeSections">
+          <mat-divider></mat-divider>
+          <h3 matSubheader>{{codeSection.name}}</h3>
+          <a [routerLink]="['/codes', code.id]" mat-list-item *ngFor="let code of codeSection.codes">
+            <mat-icon matListIcon>{{getIcon(code)}}</mat-icon>
+            <span matLine>{{code.name}}</span>
+            <button mat-icon-button (click)="showInfo(link)">
+              <mat-icon>info</mat-icon>
+            </button>
+          </a>
+        </div>
+      </mat-nav-list>
+    </div>
+  </div>
+</app-drawer>

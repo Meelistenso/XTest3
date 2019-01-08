@@ -1,0 +1,18 @@
+<div class="code-info">
+  <h1>{{codeInfo?.article?.title}}</h1><br>
+  <h4>{{codeInfo?.article?.subtitle}}</h4><br>
+
+  <mat-chip-list *ngIf="codeInfo?.article?.tags">
+    <mat-chip *ngFor="let tag of codeInfo.article.tags">
+      {{tag}}
+    </mat-chip>
+  </mat-chip-list>
+
+  <app-dynamic-template-loader *ngIf="codeInfo?.article?.shortDescription" [template]="codeInfo.article.shortDescription"></app-dynamic-template-loader>
+
+  <mat-toolbar fxLayout="row wrap" fxLayoutAlign="center center">
+    <a mat-raised-button [disabled]="!!codeId" [routerLink]="['/coding', codeId]">Кодування</a>
+    <a mat-raised-button [disabled]="!!decodeId" [routerLink]="['/decoding', decodeId]">Декодування</a>
+    <a mat-raised-button [disabled]="!!testId" [routerLink]="['/test', testId]">Тест</a>
+  </mat-toolbar>
+</div>

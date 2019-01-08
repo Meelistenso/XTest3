@@ -1,1 +1,9 @@
-search bar
+<mat-form-field color="accent" class="search-form-field">
+  <button mat-button matPrefix mat-icon-button aria-label="Clear" (click)="search=''">
+    <mat-icon>search</mat-icon>
+  </button>
+  <input matInput type="text" [placeholder]="'search' | translate" [(ngModel)]="search">
+  <button mat-button *ngIf="search" matSuffix mat-icon-button aria-label="Clear" (click)="search=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>

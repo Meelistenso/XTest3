@@ -8,6 +8,7 @@ import {
   ModuleWithComponentFactories,
   NgModule,
   OnInit,
+  OnDestroy,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
@@ -18,16 +19,14 @@ import { DtComponent } from '../shared/dt.component';
 import { DtDirective } from '../shared/dt.directive';
 import { DtItem } from '../shared/dt-item';
 
-// components for inner ngModule
-import { QuoteComponent } from './components/quote/quote.component';
-import { SelectedComponent } from './components/selected/selected.component';
+import { DynamicTemplateComponentsModule } from './components/dynamic-template-components.module';
 
 @Component({
   selector: 'app-dynamic-template',
   templateUrl: './dynamic-template.component.html',
   styleUrls: ['./dynamic-template.component.css']
 })
-export class DynamicTemplateComponent implements OnInit {
+export class DynamicTemplateComponent implements OnInit, OnDestroy {
   @Input() dt: DtItem;
 
   @ViewChild(DtDirective) appDtHost: DtDirective;
@@ -42,10 +41,12 @@ export class DynamicTemplateComponent implements OnInit {
     private compiler: Compiler,
   ) { }
 
+  private module: ModuleWithComponentFactories<any> = null;
+
   compileTemplate() {
     const metadata = {
         selector: `runtime-component-sample`,
-        template: this.dt.data.text
+        template: this.dt.data.template
     };
 
     const factory = this.createComponentFactorySync(this.compiler, metadata, null);
@@ -58,22 +59,29 @@ export class DynamicTemplateComponent implements OnInit {
   }
 
   private createComponentFactorySync(compiler: Compiler, metadata: Component, componentClass: any): ComponentFactory<any> {
-    const cmpClass = componentClass || class RuntimeComponent { name: string = 'Denys'; };
+    const cmpClass = componentClass || class RuntimeComponent { name: string = 'Meelistenso'; };
     const decoratedCmp = Component(metadata)(cmpClass);
 
-    @NgModule({
-      imports: [CommonModule],
-      declarations: [
-        decoratedCmp,
-        QuoteComponent,
-        SelectedComponent
-      ]
-    })
-    class RuntimeComponentModule { }
+    if (!this.module) {
+      @NgModule({
+        imports: [CommonModule, DynamicTemplateComponentsModule],
+        declarations: [
+          decoratedCmp
+        ]
+      })
+      class RuntimeComponentModule { }
 
-    const module: ModuleWithComponentFactories<any> = compiler.compileModuleAndAllComponentsSync(RuntimeComponentModule);
-    return module.componentFactories.find(f => f.componentType === decoratedCmp);
+      this.module = compiler.compileModuleAndAllComponentsSync(RuntimeComponentModule);
+    }
+
+    return this.module.componentFactories.find(f => f.componentType === decoratedCmp);
 }
+
+  ngOnDestroy() {
+    // if (this.componentRef) {
+    //   this.componentRef.destroy();
+    // }
+  }
 
   ngOnInit() {
     // this.loadComponent();
@@ -81,15 +89,15 @@ export class DynamicTemplateComponent implements OnInit {
     this.compileTemplate();
   }
 
-  loadComponent() {
-    const componentFactory = this.componentFactoryResolver
-      .resolveComponentFactory(this.dt.component);
+  // loadComponent() {
+  //   const componentFactory = this.componentFactoryResolver
+  //     .resolveComponentFactory(this.dt.component);
 
-    const viewContainerRef = this.appDtHost.viewContainerRef;
-    viewContainerRef.clear();
+  //   const viewContainerRef = this.appDtHost.viewContainerRef;
+  //   viewContainerRef.clear();
 
-    const componentRef = viewContainerRef.createComponent(componentFactory);
-    (<DtComponent>componentRef.instance).data = this.dt.data;
-  }
+  //   const componentRef = viewContainerRef.createComponent(componentFactory);
+  //   (<DtComponent>componentRef.instance).data = this.dt.data;
+  // }
 
 }

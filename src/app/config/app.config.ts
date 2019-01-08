@@ -23,8 +23,11 @@ export const AppConfig: IAppConfig = {
       admin: 'admin',
     },
 
+    subjects: 'subjects',
+    subject: 'subjects/:id',
+
     dashboard: 'dashboard',
-    code: 'code',
+    code: 'codes/:id',
     test: 'test',
 
     home: 'home'

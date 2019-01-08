@@ -1,17 +1,15 @@
-import { NgModule } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
-import { SpinnerComponent } from './components/spinner/spinner.component';
-import { ListErrorsComponent } from './components/list-errors/list-errors.component';
-import { ShowAuthedDirective } from './directives/show-authed.directive';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { TranslateModule } from '@ngx-translate/core';
-
+import { DrawerComponent } from './components/drawer/drawer.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HoverClassDirective } from './directives/hover-class.directive';
+import { ListErrorsComponent } from './components/list-errors/list-errors.component';
 import { MaterialModule } from './modules/material.module';
-
-import { DrawerComponent } from './ui';
+import { NgModule } from '@angular/core';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { ShowAuthedDirective } from './directives/show-authed.directive';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -24,6 +22,7 @@ import { DrawerComponent } from './ui';
   ],
   declarations: [
     DrawerComponent,
+    HoverClassDirective,
     ListErrorsComponent,
     SearchBarComponent,
     ShowAuthedDirective,
@@ -34,6 +33,7 @@ import { DrawerComponent } from './ui';
     DrawerComponent,
     FlexLayoutModule,
     FormsModule,
+    HoverClassDirective,
     ListErrorsComponent,
     MaterialModule,
     ReactiveFormsModule,

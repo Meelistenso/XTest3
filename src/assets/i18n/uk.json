@@ -65,5 +65,7 @@
   "submit": "Надіслати",
 
   "firstName": "Ім'я",
-  "lastName": "Прізвище"
+  "lastName": "Прізвище",
+
+  "search": "Пошук"
 }

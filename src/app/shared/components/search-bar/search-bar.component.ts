@@ -15,6 +15,7 @@ import { LoggerService } from '@app/core/services/logger.service';
 })
 
 export class SearchBarComponent implements OnInit {
+  search = '';
 
   constructor(private router: Router) { }
 

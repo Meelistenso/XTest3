@@ -8,6 +8,8 @@ import { UserService } from './services/user.service';
 import { ApiService } from './services/api.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { JwtService } from './services/jwt.service';
+import { SubjectService } from './services/subject.service';
+import { CodeService } from './services/code.service';
 
 @NgModule({
   imports: [
@@ -20,6 +22,8 @@ import { JwtService } from './services/jwt.service';
     AuthGuard,
     ApiService,
     JwtService,
+    SubjectService,
+    CodeService,
   ],
 })
 

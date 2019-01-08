@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { HomeAuthResolver } from './home-auth-resolver.service';
 import { SharedModule } from '@app/shared';
 import { HomeRoutingModule } from './home-routing.module';
+import { SubjectGridComponent } from './components/subject-grid/subject-grid.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { HomeRoutingModule } from './home-routing.module';
     HomeRoutingModule,
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    SubjectGridComponent,
   ],
   providers: [
     HomeAuthResolver

@@ -1,12 +1,12 @@
 @import "mixins";
 
 footer {
-  padding: calculateRem(8px) calculateRem(16px);
+  padding: calculateRem(12px);
   color: $secondary--color;
   background: $primary--color;
-  // margin-top: 2rem;
   position: sticky;
-  top: 100%;
+  @include font-size(12px);
+  margin-top: calculateRem(40px);
 
   img {
     width: 25%;

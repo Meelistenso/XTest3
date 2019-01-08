@@ -60,7 +60,7 @@ export class UserService {
     const route = (type === 'login') ? '/login' : '';
     return this.apiService.post('/users' + route, {user: credentials})
       .pipe(map(
-      response => {
+        response => {
         this.setAuth(response.data.user);
         return response.data.user;
       }

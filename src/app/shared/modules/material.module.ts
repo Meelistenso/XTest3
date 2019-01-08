@@ -1,6 +1,7 @@
 import {
   MatAutocompleteModule,
   MatButtonModule,
+  MatButtonToggleModule,
   MatCardModule,
   MatDialogModule,
   MatGridListModule,
@@ -20,13 +21,16 @@ import {
   MatNativeDateModule,
   MatTreeModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatChipsModule,
+  MatRippleModule,
 } from '@angular/material';
 import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [
     MatButtonModule,
+    MatButtonToggleModule,
     MatMenuModule,
     MatIconModule,
     MatCardModule,
@@ -47,10 +51,13 @@ import { NgModule } from '@angular/core';
     MatNativeDateModule,
     MatTreeModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatChipsModule,
+    MatRippleModule,
   ],
   exports: [
     MatButtonModule,
+    MatButtonToggleModule,
     MatMenuModule,
     MatIconModule,
     MatCardModule,
@@ -71,7 +78,9 @@ import { NgModule } from '@angular/core';
     MatNativeDateModule,
     MatTreeModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatChipsModule,
+    MatRippleModule,
   ],
 })
 

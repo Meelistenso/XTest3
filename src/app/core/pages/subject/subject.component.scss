@@ -1,0 +1,16 @@
+@import "mixins";
+
+.subject-content {
+  margin: calculateRem(25px);
+}
+
+h1 {
+  @include font-size(42px);
+  font-weight: 900;
+  margin: 0 calculateRem(25px) 0 0;
+}
+
+.search-form-field {
+  width: 200px;
+  margin-top: calculateRem(25px);
+}

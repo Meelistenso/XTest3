@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 import { DtService } from '../shared/dt.service';
 import { DtItem } from '../shared/dt-item';
@@ -11,14 +11,15 @@ import { DtItem } from '../shared/dt-item';
 export class DynamicTemplateLoaderComponent implements OnInit {
   dt: DtItem;
 
+  @Input() template: string;
+
   constructor(private dtService: DtService) { }
 
   ngOnInit() {
     this.dt = {
       component: null,
       data: {
-        name: 'akf.jakjfnskldjf <i>MEELISTENSO</i>',
-        text: '<app-quote [data]="{name:\'my custon make\', text:\'my custom text\'}">РАКЕТА ПУШКА БОМБА<app-quote>',
+        template: this.template,
       },
     };
   }
